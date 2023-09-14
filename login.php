@@ -12,6 +12,7 @@ if ($idpengguna == 'admin') {
     if (password_verify($katalaluan, $row->kata)) {
         $_SESSION['idpengguna'] = 'admin';
         header('location: admin/index.php');
+        exit;
     } else {
         ?>
         <script>
@@ -28,7 +29,8 @@ if ($idpengguna == 'admin') {
         $row = $result->fetch_object();
         if (password_verify($katalaluan, $row->kata)) {
             $_SESSION['idwarden'] = $row->idwarden;
-            header('location: warden/home.php');
+            header('location: warden/Student.php');
+            exit;
         } else {
             ?>
             <script>
@@ -46,6 +48,7 @@ if ($idpengguna == 'admin') {
             if (password_verify($katalaluan, $row->kata)) {
                 $_SESSION['idpelajar'] = $row->idpelajar;
                 header('location: pelajar/indexpelajar.php');
+                exit;
             } else {
                 ?>
                 <script>
