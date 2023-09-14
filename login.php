@@ -11,7 +11,7 @@ if ($idpengguna == 'admin') {
     $row = $conn->query($sql)->fetch_object();
     if (password_verify($katalaluan, $row->kata)) {
         $_SESSION['idpengguna'] = 'admin';
-        header('location: admin/');
+        header('location: admin/index.php');
     } else {
         ?>
         <script>
