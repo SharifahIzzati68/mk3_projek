@@ -1,6 +1,6 @@
 <?php
 global $conn;
-require 'conn.php';
+require '../include/conn.php';
 $nosiri = $_GET['nosiri'];
 $sql = "SELECT peralatan.nosiri, pelajar.namapelajar AS nama_pelajar, pelajar.warden, warden.nama AS nama_warden
         FROM peralatan

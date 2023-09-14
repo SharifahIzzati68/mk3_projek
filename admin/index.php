@@ -1,5 +1,5 @@
 <?php global $conn;
-require 'conn.php'; ?>
+require '../include/conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

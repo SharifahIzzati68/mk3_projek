@@ -1,6 +1,6 @@
 <?php
 global $conn;
-require 'conn.php';
+require '../include/conn.php';
 $idwarden = $_GET['idwarden'];
 $nokpwarden= $_GET['nokpwarden'];
 $sql = "UPDATE warden

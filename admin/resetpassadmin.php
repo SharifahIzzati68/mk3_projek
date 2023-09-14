@@ -1,6 +1,6 @@
 <?php
 global $conn;
-require 'conn.php';
+require '../include/conn.php';
 $idadmin = $_POST['idadmin'];
 $kata = "admin";
 $sql = "UPDATE admin

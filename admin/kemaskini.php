@@ -1,6 +1,6 @@
 <?php
 global $conn;
-require 'conn.php';
+require '../include/conn.php';
 $idwarden = $_POST['idwarden'];
 $namawarden = $_POST['namawarden'];
 $nokpwarden= $_POST['nokpwarden'];
