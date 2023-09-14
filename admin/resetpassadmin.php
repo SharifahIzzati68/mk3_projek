@@ -2,9 +2,8 @@
 global $conn;
 require '../include/conn.php';
 $idadmin = $_POST['idadmin'];
-$kata = "admin";
 $sql = "UPDATE admin
-SET kata = '$kata'
+SET kata = 'admin'
 WHERE idadmin = $idadmin";
 $conn->query($sql);
 header('location: index.php');
