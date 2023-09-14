@@ -29,7 +29,7 @@ if ($idpengguna == 'admin') {
         $row = $result->fetch_object();
         if (password_verify($katalaluan, $row->kata)) {
             $_SESSION['idwarden'] = $row->idwarden;
-            header('location: warden/Student.php');
+            header('location: warden/home.php');
             exit;
         } else {
             ?>
