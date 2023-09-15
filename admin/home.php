@@ -1,6 +1,12 @@
 <?php
 require '../include/conn.php';
-global $conn?>
+global $conn;
+if (!isset($_SESSION['idadmin'])) header('location: ../');
+$idadmin = $_SESSION['idadmin'];
+$sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
+$row = $conn->query($sql)->fetch_object();
+$namapelajar = $row->idadmin; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
