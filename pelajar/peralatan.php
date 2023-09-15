@@ -100,6 +100,9 @@ if (!isset($_GET['edit'])) {
             </table>
         </fieldset>
     </form>
+    <br>
+    <a href="indexpelajar.php?menu=peralatan">Kembali ke Senarai Peralatan</a>
+    <br>
     <?php
 }
 ?>
@@ -133,6 +136,7 @@ if (!isset($_GET['edit'])) {
         <?php
     }
     ?>
+
 </table>
 <script>
     function sahkan() {
