@@ -1,0 +1,15 @@
+.tr1{
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.tr2{
+    border: 2px solid black;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.tr3{
+    border: 2px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
+}
