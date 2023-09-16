@@ -1,4 +1,6 @@
-<?php global $conn;
+<?php
+/** @var object $conn */
+$conn;
 require '../include/conn.php';
 if (!isset($_SESSION['idadmin'])) header('location: ../');
 $idadmin = $_SESSION['idadmin'];

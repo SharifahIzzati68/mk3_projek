@@ -1,5 +1,6 @@
 <?php
-global $conn;
+/** @var object $conn */
+$conn;
 require '../include/conn.php';
 
 // Check if the user is logged in as a warden
