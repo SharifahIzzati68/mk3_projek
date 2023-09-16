@@ -21,7 +21,7 @@ $idadmin = $row->idadmin;
 <form action="resetpassadmin.php" method="post">
     <input type="hidden" name="idadmin" value="<?php echo $row->idadmin; ?>">
     <fieldset>
-        <legend>reset password</legend>
+        <legend>Change password</legend>
         <table>
             <tr>
                 <td><input type="text" name="kata"></td>
