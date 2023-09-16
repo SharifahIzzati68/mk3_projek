@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssss", $warden,$namapelajar, $nokppelajar, $kata);
 
     if ($stmt->execute()) {
-        header('Location: home.php?menu=Student'); // Redirect to the desired page after successful insertion
+        header('Location: index.php?menu=Student'); // Redirect to the desired page after successful insertion
         exit;
     } else {
         echo "Error: " . $stmt->error;

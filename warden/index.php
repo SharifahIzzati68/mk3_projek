@@ -23,11 +23,11 @@ $namawarden = $row->namawarden;
     <tr>
         <td>System</td>
         <td>
-            <a href="home.php?menu=Student">Student</a>
+            <a href="index.php?menu=Student">Student</a>
             ::
-            <a href="home.php?menu=peralatanP">Peralatan</a>
+            <a href="index.php?menu=peralatanP">Peralatan</a>
             ::
-            <a href="home.php?menu=about">About</a>
+            <a href="index.php?menu=about">About</a>
         </td>
     </tr>
 </table>

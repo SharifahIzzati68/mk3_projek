@@ -100,6 +100,8 @@ if (!isset($_GET['edit'])) {
             </table>
         </fieldset>
     </form>
+    <br>
+    <a href="index.php?menu=peralatan">Kembali ke Senarai Peralatan</a>
     <?php
 }
 ?>
@@ -123,6 +125,8 @@ if (!isset($_GET['edit'])) {
             <td class="tr3"><?php echo $row->namapelajar; ?></td>
             <td class="tr3"><?php echo $row->nokppelajar; ?></td>
             <td class="tr3">
+                <a href="resestpassp.php?nokppelajar=<?php echo $row->nokppelajar; ?>&idpelajar=<?php echo $row->idpelajar; ?>">Reset
+                    Kata Laluan</a>
                 <a href="Student.php?edit=<?php echo $row->idpelajar; ?>">Edit</a>
                 |
                 <a href="deletew.php?idpelajar=<?php echo $row->idpelajar; ?>"

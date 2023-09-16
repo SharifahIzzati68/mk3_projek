@@ -86,7 +86,7 @@ $kata = $row->kata;
 </table>
 
 <h2>Edit Profile</h2>
-<form action="home.php?menu=about" method="post">
+<form action="index.php?menu=about" method="post">
     <input type="hidden" name="update_profile" value="1">
     <label for="new_namawarden">New Name:</label>
     <label>
@@ -95,14 +95,14 @@ $kata = $row->kata;
     <br>
     <label for="new_nokpwarden">New IC Number:</label>
     <label>
-        <input type="text" name="new_nokpwarden" value="<?php echo $nokpwarden; ?>" required>
+        <input type="text" name="new_nokpwarden" value="<?php echo $nokpwarden; ?>" required minlength="12" maxlength="12">
     </label>
     <br>
     <button type="submit">Update Profile</button>
 </form>
 
 <h2>Reset Password</h2>
-<form action="home.php?menu=about" method="post">
+<form action="index.php?menu=about" method="post">
     <input type="hidden" name="reset_password" value="1">
     <label for="new_password">New Password:</label>
     <label>

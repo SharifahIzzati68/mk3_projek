@@ -10,4 +10,4 @@ $sql = "UPDATE pelajar
  SET namapelajar = '$namapelajar', nokppelajar = '$nokppelajar', kata = '$kata'
  WHERE idpelajar = $idpelajar";
 $conn->query($sql);
-header('location: home.php?menu=Student');
+header('location: index.php?menu=Student');
