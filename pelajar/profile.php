@@ -137,7 +137,7 @@ $namawarden = $row->namawarden;
     <fieldset>
         <legend>
             <h2>
-                Reset Password
+                Change Password
             </h2>
         </legend>
         <label for="new_password">
@@ -147,7 +147,7 @@ $namawarden = $row->namawarden;
             <input type="password" name="new_password" required>
         </label>
         <button type="submit">
-            Reset Password
+            Change Password
         </button>
         <br>
         <br>
