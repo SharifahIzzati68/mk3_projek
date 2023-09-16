@@ -22,13 +22,13 @@ $nokppelajar = $row->nokppelajar;
 <p><a href="../logout.php">LOGOUT</a></p>
 <table>
     <tr>
-        <td>System for Student</td>
+        <td>Sistem Pelajar/td>
         <td>
-            <a href="indexpelajar.php?menu=home">Home Pelajar</a>
+            <a href="index.php?menu=home">Home Pelajar</a>
             ::
-            <a href="indexpelajar.php?menu=peralatan">Senarai Peralatan</a>
+            <a href="index.php?menu=peralatan">Senarai Peralatan</a>
             ::
-            <a href="indexpelajar.php?menu=profile">Profile</a>
+            <a href="index.php?menu=profile">Profile</a>
         </td>
     </tr>
 </table>

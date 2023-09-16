@@ -73,49 +73,85 @@ $namawarden = $row->namawarden;
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../include/styllePelajar.css">
     <title>Profile</title>
 </head>
 <body>
 <h1>Profile</h1>
-<table border="1">
+<table>
     <tr>
-        <th>Nama Pelajar</th>
-        <td><?php echo $namapelajar; ?></td>
+        <th class="tableprofile">Nama Pelajar</th>
+        <td class="tableprofile"><?php echo $namapelajar; ?></td>
     </tr>
     <tr>
-        <th>No KP Pelajar</th>
-        <td><?php echo $nokppelajar; ?></td>
+        <th class="tableprofile">No KP Pelajar</th>
+        <td class="tableprofile"><?php echo $nokppelajar; ?></td>
     </tr>
     <tr>
-        <th>Nama Warden</th>
-        <td><?php echo $namawarden; ?></td>
+        <th class="tableprofile">Nama Warden</th>
+        <td class="tableprofile"><?php echo $namawarden; ?></td>
     </tr>
 </table>
 
-<h2>Edit Profile</h2>
-<form action="indexpelajar.php?menu=profile" method="post">
+
+<form action="index.php?menu=profile" method="post">
     <input type="hidden" name="update_profile" value="1">
-    <label for="new_namapelajar">New Name:</label>
-    <label>
-        <input type="text" name="new_namapelajar" value="<?php echo $namapelajar; ?>" required>
-    </label>
-    <br>
-    <label for="new_nokppelajar">New IC Number:</label>
-    <label>
-        <input type="text" name="new_nokppelajar" value="<?php echo $nokppelajar; ?>" required>
-    </label>
-    <br>
-    <button type="submit">Update Profile</button>
+    <fieldset>
+        <legend><h2>Edit Profile</h2></legend>
+            <table>
+                <tr>
+                    <th>
+                        <label for="new_namapelajar">New Name:</label>
+                    </th>
+                    <td>
+                        <label>
+                            <input type="text" name="new_namapelajar" value="<?php echo $namapelajar; ?>" required>
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="new_nokppelajar">New IC Number:</label>
+                    </th>
+                    <td>
+                        <label>
+                            <input type="text" name="new_nokppelajar" value="<?php echo $nokppelajar; ?>" required minlength="12" maxlength="12">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">
+                            Update
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        <br>
+    </fieldset>
 </form>
 
-<h2>Reset Password</h2>
-<form action="indexpelajar.php?menu=profile" method="post">
+<form action="index.php?menu=profile" method="post">
     <input type="hidden" name="reset_password" value="1">
-    <label for="new_password">New Password:</label>
-    <label>
-        <input type="password" name="new_password" required>
-    </label>
-    <button type="submit">Reset Password</button>
+    <fieldset>
+        <legend>
+            <h2>
+                Reset Password
+            </h2>
+        </legend>
+        <label for="new_password">
+            New Password:
+        </label>
+        <label>
+            <input type="password" name="new_password" required>
+        </label>
+        <button type="submit">
+            Reset Password
+        </button>
+        <br>
+        <br>
+    </fieldset>
 </form>
 </body>
 </html>

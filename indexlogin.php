@@ -8,6 +8,7 @@
     <title>Sistem Pendaftaran Peralatan Elektrik</title>
 </head>
 <body>
+<h1>Sistem Pendaftaran Peralatan Elektrik</h1>
 <form action="login.php" method="post">
     <label for="idpengguna">ID Pengguna</label>
     <input type="text" name="idpengguna" id="idpengguna" required>

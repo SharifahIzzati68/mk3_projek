@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssss", $pelajar, $jenisperalatan, $nosiri, $jenama);
 
     if ($stmt->execute()) {
-        header('Location: indexpelajar.php?menu=peralatan');
+        header('Location: index.php?menu=peralatan');
     } else {
         echo "Error: " . $stmt->error;
     }

@@ -47,7 +47,7 @@ if ($idpengguna == 'admin') {
             $row = $result->fetch_object();
             if (password_verify($katalaluan, $row->kata)) {
                 $_SESSION['idpelajar'] = $row->idpelajar;
-                header('location: pelajar/indexpelajar.php');
+                header('location: pelajar/index.php');
                 exit;
             } else {
                 ?>

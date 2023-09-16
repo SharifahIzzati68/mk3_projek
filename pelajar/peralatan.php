@@ -101,7 +101,7 @@ if (!isset($_GET['edit'])) {
         </fieldset>
     </form>
     <br>
-    <a href="indexpelajar.php?menu=peralatan">Kembali ke Senarai Peralatan</a>
+    <a href="index.php?menu=peralatan">Kembali ke Senarai Peralatan</a>
     <br>
     <?php
 }
