@@ -21,11 +21,11 @@ $idadmin = $row->idadmin;
 <p><a href="../logout.php">LOGOUT</a></p>
 <table>
     <tr>
-        <td>System for Student</td>
+        <td>Sistem Warden</td>
         <td>
-            <a href="index.php?menu=home">Home Pelajar</a>
+            <a href="index.php?menu=home">Home</a>
             ::
-            <a href="index.php?menu=peralatanA">Senarai Peralatan</a>
+            <a href="index.php?menu=peralatanA">Carian Peralatan</a>
             ::
             <a href="index.php?menu=profile">Profile</a>
         </td>
