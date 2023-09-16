@@ -10,7 +10,7 @@ if ($idpengguna == 'admin') {
     $sql = 'SELECT * FROM admin';
     $row = $conn->query($sql)->fetch_object();
     if (password_verify($katalaluan, $row->kata)) {
-        $_SESSION['idpengguna'] = 'admin';
+        $_SESSION['idadmin'] = $row->idadmin;
         header('location: admin/index.php');
         exit;
     } else {
