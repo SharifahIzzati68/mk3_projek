@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 16, 2023 at 08:16 AM
+-- Generation Time: Sep 16, 2023 at 08:24 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -97,7 +97,7 @@ INSERT INTO `peralatan` (`idperalatan`, `pelajar`, `jenisperalatan`, `jenama`, `
 CREATE TABLE `warden` (
   `idwarden` int(11) NOT NULL,
   `namawarden` varchar(250) NOT NULL,
-  `nokpwarden` int(11) NOT NULL,
+  `nokpwarden` varchar(12) NOT NULL,
   `kata` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -106,8 +106,8 @@ CREATE TABLE `warden` (
 --
 
 INSERT INTO `warden` (`idwarden`, `namawarden`, `nokpwarden`, `kata`) VALUES
-(1, 'zati', 1035, '$2y$10$nSd.3l8ubtt52jz625web.XowWaj8VOiuso80iAnNCuVQiVxabUSa'),
-(3, 'qur', 7890, '$2y$10$4W3VHyc/ZKHeH3q9rBNO7uHKPfzw/L9XXm9/ZyRiEyBRm7d7jWNee');
+(1, 'zati', '010418061035', '$2y$10$0R2zMXQLwlcO7dNS1cGvcOuG8SyDnEXJpdsPiw2tu8RGMo1Td1h9C'),
+(3, 'qur', '012345678912', '$2y$10$Kt52JTKnzmAZgqBUJrcLFe5w140Wa.G0/pb5TamW5XkG2lEa1Do.a');
 
 --
 -- Indexes for dumped tables
