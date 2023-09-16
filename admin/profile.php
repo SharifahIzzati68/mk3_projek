@@ -4,7 +4,7 @@ if (!isset($_SESSION['idadmin'])) header('location: ../');
 $idadmin = $_SESSION['idadmin'];
 $sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
 $row = $conn->query($sql)->fetch_object();
-$namapelajar = $row->idadmin;
+$idadmin = $row->idadmin;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +19,12 @@ $namapelajar = $row->idadmin;
 
 
 <form action="resetpassadmin.php" method="post">
+    <input type="hidden" name="idadmin" value="<?php echo $row->idadmin; ?>">
     <fieldset>
         <legend>reset password</legend>
         <table>
             <tr>
-                <td><input type="text" name="idadmin"></td>
+                <td><input type="text" name="kata"></td>
                 <td colspan="2">
                     <button type="submit">SIMPAN</button>
                 </td>

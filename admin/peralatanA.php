@@ -32,19 +32,6 @@ $namapelajar = $row->idadmin;
         </table>
     </fieldset>
 </form>
-<form action="resetpassadmin.php" method="post">
-    <fieldset>
-        <legend>reset password</legend>
-        <table>
-            <tr>
-                <td><input type="text" name="idadmin"></td>
-                <td colspan="2">
-                    <button type="submit">SIMPAN</button>
-                </td>
-            </tr>
-        </table>
-    </fieldset>
-</form>
 <?php
 // Your database connection code (require 'conn.php') should be here.
 
