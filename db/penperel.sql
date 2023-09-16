@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 16, 2023 at 08:24 AM
+-- Generation Time: Sep 16, 2023 at 08:27 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -58,7 +58,7 @@ CREATE TABLE `pelajar` (
 --
 
 INSERT INTO `pelajar` (`idpelajar`, `warden`, `namapelajar`, `nokppelajar`, `kata`) VALUES
-(5, 1, 'aishah', '012345678912', '$2y$10$xZOgrwEOI8mvjE8KxDlHOeKCct4k2EhFISM1of/ykboVlBIstVMkm'),
+(5, 1, 'aishah', '012345678913', '$2y$10$Jm2u1EAjzRvWw3QRLKE0oOp1E/8bZQcFbjubyhoi.mhAOMvn5PtPC'),
 (7, 3, 'akid', '012020021561', '$2y$10$kZS3v090Ypj6Pc9LQJWOCOKA46TZjYARw6qcLSDYWd2Uth1o6w5DS'),
 (8, 3, 'ayan', '031203025421', '$2y$10$00Cp2QdWNayHZgvnIw1T3OrWDhh6w8Ky38RMIttg81pn0u9jxQYH.'),
 (9, 3, 'aliya', '061114064587', '$2y$10$n41o1RVfsmqC0l2xQH8Wd.cuBkIoAjPqZhdMxlOjNteIkJfrXd1mO');
