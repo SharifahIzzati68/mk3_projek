@@ -5,9 +5,9 @@ require '../include/conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate and sanitize user input
-    $jenisperalatan = filter_input(INPUT_POST, 'jenisperalatan', FILTER_SANITIZE_STRING);
-    $nosiri = filter_input(INPUT_POST, 'nosiri', FILTER_SANITIZE_STRING);
-    $jenama = filter_input(INPUT_POST, 'jenama', FILTER_SANITIZE_STRING);
+    $jenisperalatan =  $_POST['jenisperalatan'];
+    $nosiri =  $_POST['nosiri'];
+    $jenama =  $_POST['jenama'];
 
     // Check if input is valid
     if (empty($jenisperalatan) || empty($nosiri) || empty($jenama)) {

@@ -5,9 +5,9 @@ require '../include/conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate and sanitize user input
-    $namapelajar = filter_input(INPUT_POST, 'namapelajar', FILTER_SANITIZE_STRING);
-    $nokppelajar = filter_input(INPUT_POST, 'nokppelajar', FILTER_SANITIZE_STRING);
-    $katas = filter_input(INPUT_POST, 'nokppelajar', FILTER_SANITIZE_STRING);
+    $namapelajar = $_POST['namapelajar'];
+    $nokppelajar = $_POST['nokppelajar'];
+    $katas = $_POST['nokppelajar'];
     $kata = password_hash($katas, PASSWORD_BCRYPT);
 
     // Check if input is valid
