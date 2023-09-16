@@ -111,7 +111,7 @@ if (!isset($_GET['edit'])) {
             <td class="tr3">
                 <a href="resestpassp.php?nokppelajar=<?php echo $row->nokppelajar; ?>&idpelajar=<?php echo $row->idpelajar; ?>">Reset
                     Kata Laluan</a>
-                <a href="Student.php?edit=<?php echo $row->idpelajar; ?>">Edit</a>
+                <a href="index.php?edit=<?php echo $row->idpelajar; ?>& menu=Student">Edit</a>
                 |
                 <a href="padam.php?idpelajar=<?php echo $row->idpelajar; ?>"
                    onclick="return sahkan()">Delete</a>
