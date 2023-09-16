@@ -27,7 +27,7 @@ $namawarden = $row->namawarden;
             ::
             <a href="index.php?menu=peralatanP">Equipment List</a>
             ::
-            <a href="index.php?menu=about">About</a>
+            <a href="index.php?menu=profile">About</a>
         </td>
     </tr>
 </table>

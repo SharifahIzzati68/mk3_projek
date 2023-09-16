@@ -21,7 +21,7 @@ $namawarden = $row->namawarden;
 <?php
 if (!isset($_GET['edit'])) {
     ?>
-    <form action="save.php" method="post">
+    <form action="simpan.php" method="post">
         <fieldset>
             <legend>Daftar Pelajar</legend>
             <table>
@@ -41,14 +41,6 @@ if (!isset($_GET['edit'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td>Kata Laluan</td>
-                    <td>
-                        <label>
-                            <input type="text" name="kata" >
-                        </label>
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2">
                         <button type="submit">SIMPAN</button>
                         <button type="reset">BATAL</button>
@@ -63,7 +55,7 @@ if (!isset($_GET['edit'])) {
     $sql = "SELECT * FROM pelajar WHERE idpelajar = $idpelajar";
     $row = $conn->query($sql)->fetch_object();
     ?>
-    <form action="update.php" method="post">
+    <form action="kemaskini.php" method="post">
         <input type="hidden" name="idpelajar" value="<?php echo $row->idpelajar; ?>">
         <fieldset>
             <legend>Kemaskini Data Pelajar</legend>
@@ -80,14 +72,6 @@ if (!isset($_GET['edit'])) {
                     <td>
                         <label>
                             <input type="text" name="nokppelajar" required value="<?php echo $row->nokppelajar; ?>" minlength="12" maxlength="12">
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Kata Laluan</td>
-                    <td>
-                        <label>
-                            <input type="text" name="kata" required value="<?php echo $row->kata; ?>">
                         </label>
                     </td>
                 </tr>
@@ -129,7 +113,7 @@ if (!isset($_GET['edit'])) {
                     Kata Laluan</a>
                 <a href="Student.php?edit=<?php echo $row->idpelajar; ?>">Edit</a>
                 |
-                <a href="deletew.php?idpelajar=<?php echo $row->idpelajar; ?>"
+                <a href="padam.php?idpelajar=<?php echo $row->idpelajar; ?>"
                    onclick="return sahkan()">Delete</a>
             </td>
         </tr>

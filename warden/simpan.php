@@ -7,7 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate and sanitize user input
     $namapelajar = filter_input(INPUT_POST, 'namapelajar', FILTER_SANITIZE_STRING);
     $nokppelajar = filter_input(INPUT_POST, 'nokppelajar', FILTER_SANITIZE_STRING);
-    $kata = filter_input(INPUT_POST, 'kata', FILTER_SANITIZE_STRING);
+    $katas = filter_input(INPUT_POST, 'nokppelajar', FILTER_SANITIZE_STRING);
+    $kata = password_hash($katas, PASSWORD_BCRYPT);
 
     // Check if input is valid
     if (empty($namapelajar)|| empty($kata) || empty($nokppelajar) || strlen($nokppelajar) !== 12) {
@@ -40,4 +41,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo "Invalid request method.";
 }
-?>
+
