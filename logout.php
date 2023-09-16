@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header('location: ../indexlogin.php'); // Adjust the path as needed
+header('location: index.php'); // Adjust the path as needed
 ?>

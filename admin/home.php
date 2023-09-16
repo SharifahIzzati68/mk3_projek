@@ -31,11 +31,7 @@ if (!isset($_GET['edit'])) {
                 </tr>
                 <tr>
                     <td>No. KP</td>
-                    <td><input type="text" name="nokpwarden"></td>
-                </tr>
-                <tr>
-                    <td>Kata</td>
-                    <td><input type="text" name="kata"></td>
+                    <td><input type="text" name="nokpwarden" required maxlength="12" minlength="12"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -69,12 +65,6 @@ if (!isset($_GET['edit'])) {
                                maxlength="12"></td>
                 </tr>
                 <tr>
-                    <td>Kata</td>
-                    <td><input type="text" name="kata"
-                               required value="<?php echo $row->kata; ?>" minlength="5"
-                               maxlength="5"></td>
-                </tr>
-                <tr>
                     <td colspan="2">
                         <button type="submit">SIMPAN</button>
                         <button type="reset">BATAL</button>
@@ -97,7 +87,6 @@ if (!isset($_GET['edit'])) {
         <th>Bil</th>
         <th>Nama Warden</th>
         <th>No. KP</th>
-        <th>Kata</th>
     </tr>
     <?php
     $bil = 1;
