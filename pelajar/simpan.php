@@ -1,7 +1,6 @@
 <?php
 /** @var object $conn */
 $conn;
-session_start();
 require '../include/conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

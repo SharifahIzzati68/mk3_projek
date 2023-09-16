@@ -64,7 +64,7 @@ if (!isset($_GET['edit'])) {
     $sql = "SELECT * FROM peralatan WHERE idperalatan = $idperalatan ORDER BY pelajar";
     $row = $conn->query($sql)->fetch_object();
     ?>
-    <form action="kemaskini.php" method="post">
+    <form action="kemaskini.php?" method="post">
         <input type="hidden" name="idperalatan" value="<?php echo $row->idperalatan; ?>">
         <fieldset>
             <legend><h1>Kemaskini Peralatan</h1></legend>
@@ -129,7 +129,7 @@ if (!isset($_GET['edit'])) {
             <td class="tableprofile"><?php echo $row->nosiri; ?></td>
             <td class="tableprofile"><?php echo $row->jenama; ?></td>
             <td class="tableprofile">
-                <a href="peralatan.php?edit=<?php echo $row->idperalatan; ?>">Edit</a>
+                <a href="index.php?edit=<?php echo $row->idperalatan; ?> & menu=peralatan">Edit</a>
                 |
                 <a href="padam.php?idperalatan=<?php echo $row->idperalatan; ?>"
                    onclick="return sahkan()">Padam</a>
