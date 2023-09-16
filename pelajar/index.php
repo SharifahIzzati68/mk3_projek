@@ -18,11 +18,11 @@ $nokppelajar = $row->nokppelajar;
     <title>Sistem Pendaftaran Peralatan Elektrik</title>
 </head>
 <body>
-<?php echo "Selamat Datang $namapelajar"; ?>
+<h1><?php echo "Selamat Datang $namapelajar"; ?></h1>
 <p><a href="../logout.php">LOGOUT</a></p>
 <table>
     <tr>
-        <td>Sistem Pelajar</td>
+        <th>Sistem Pelajar</th>
         <td>
             <a href="index.php?menu=home">Home</a>
             ::

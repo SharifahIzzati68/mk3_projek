@@ -17,7 +17,7 @@ $idadmin = $row->idadmin;
 </head>
 <body>
 
-<?php echo "Selamat Datang Admin"; ?>
+<h1><?php echo "Selamat Datang Admin"; ?></h1>
 <p><a href="../logout.php">LOGOUT</a></p>
 <table>
     <tr>
