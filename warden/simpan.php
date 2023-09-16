@@ -7,37 +7,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate and sanitize user input
     $namapelajar = filter_input(INPUT_POST, 'namapelajar', FILTER_SANITIZE_STRING);
     $nokppelajar = filter_input(INPUT_POST, 'nokppelajar', FILTER_SANITIZE_STRING);
-    $kata = filter_input(INPUT_POST, 'kata', FILTER_SANITIZE_STRING);
+    $katas = filter_input(INPUT_POST, 'nokppelajar', FILTER_SANITIZE_STRING);
+    $kata = password_hash($katas, PASSWORD_BCRYPT);
 
     // Check if input is valid
-    if (empty($namapelajar)|| empty($kata) || empty($nokppelajar) || strlen($nokppelajar) !== 12) {
+    if (empty($namapelajar) || empty($kata) || empty($nokppelajar) || strlen($nokppelajar) !== 12) {
         echo "Invalid input. Please fill in all fields correctly.";
         exit;
     }
     $warden = $_SESSION['idwarden'];
 
-    // Use prepared statement to prevent SQL injection
-    $sql = "INSERT INTO pelajar (warden, namapelajar, nokppelajar, kata) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
+    // Interpolate variables directly into the SQL query (not recommended for security)
+    $sql = "INSERT INTO pelajar (warden, namapelajar, nokppelajar, kata) VALUES ('$warden', '$namapelajar', '$nokppelajar', '$kata')";
 
-    if (!$stmt) {
-        echo "Database error: " . $conn->error;
-        exit;
-    }
+    $result = $conn->query($sql);
 
-    $stmt->bind_param("ssss", $warden,$namapelajar, $nokppelajar, $kata);
-
-    if ($stmt->execute()) {
+    if ($result) {
         header('Location: index.php?menu=Student'); // Redirect to the desired page after successful insertion
         exit;
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $conn->error;
         exit;
     }
 
-    $stmt->close();
     $conn->close();
 } else {
     echo "Invalid request method.";
 }
-?>

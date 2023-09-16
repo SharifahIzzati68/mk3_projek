@@ -18,25 +18,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Set the 'pelajar' value to the appropriate user ID (you need to determine this)
     $pelajar = $_SESSION['idpelajar']; // Update this based on your session structure
 
-    $sql = "INSERT INTO peralatan (pelajar, jenisperalatan, nosiri, jenama) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
+    // Interpolate variables directly into the SQL query (not recommended for security)
+    $sql = "INSERT INTO peralatan (pelajar, jenisperalatan, nosiri, jenama) VALUES ('$pelajar', '$jenisperalatan', '$nosiri', '$jenama')";
 
-    if (!$stmt) {
-        echo "Database error: " . $conn->error;
-        exit;
-    }
+    $result = $conn->query($sql);
 
-    $stmt->bind_param("ssss", $pelajar, $jenisperalatan, $nosiri, $jenama);
-
-    if ($stmt->execute()) {
+    if ($result) {
         header('Location: index.php?menu=peralatan');
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $conn->error;
     }
 
-    $stmt->close();
     $conn->close();
 } else {
     echo "Invalid request method.";
 }
-
