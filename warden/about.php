@@ -101,14 +101,14 @@ $kata = $row->kata;
     <button type="submit">Update Profile</button>
 </form>
 
-<h2>Reset Password</h2>
+<h2>Change Password</h2>
 <form action="index.php?menu=about" method="post">
     <input type="hidden" name="reset_password" value="1">
     <label for="new_password">New Password:</label>
     <label>
         <input type="password" name="new_password" required>
     </label>
-    <button type="submit">Reset Password</button>
+    <button type="submit">Change Password</button>
 </form>
 </body>
 </html>
