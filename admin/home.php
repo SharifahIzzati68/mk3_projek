@@ -18,14 +18,12 @@ $namapelajar = $row->idadmin; ?>
 </head>
 <body>
 
-<h2>Senarai Warden</h2>
-
 <?php
 if (!isset($_GET['edit'])) {
     ?>
     <form action="simpan.php" method="post">
         <fieldset>
-            <legend>Daftar Warden Baru</legend>
+            <legend><h1>Daftar Warden Baru</h1></legend>
             <table>
                 <tr>
                     <td>Nama warden</td>
@@ -57,7 +55,7 @@ if (!isset($_GET['edit'])) {
     <form action="kemaskini.php" method="post">
         <input type="hidden" name="idwarden" value="<?php echo $row->idwarden; ?>">
         <fieldset>
-            <legend>Kemaskini Data Warden</legend>
+            <legend><h1>Kemaskini Data Warden</h1></legend>
             <table>
                 <tr>
                     <td>Nama Warden</td>
@@ -85,10 +83,16 @@ if (!isset($_GET['edit'])) {
             </table>
         </fieldset>
     </form>
+    <br>
+    <a href="index.php?menu=home">Kembali ke Senarai Warden</a>
     <?php
 }
 ?>
-<table class="table">
+
+<br>
+<h2>Senarai Warden</h2>
+
+<table  border="1">
     <tr>
         <th>Bil</th>
         <th>Nama Warden</th>

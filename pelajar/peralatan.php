@@ -104,7 +104,6 @@ if (!isset($_GET['edit'])) {
     </form>
     <br>
     <a href="index.php?menu=peralatan">Kembali ke Senarai Peralatan</a>
-    <br>
     <?php
 }
 ?>

@@ -21,7 +21,7 @@ $idadmin = $row->idadmin;
 <p><a href="../logout.php">LOGOUT</a></p>
 <table>
     <tr>
-        <td>Sistem Warden</td>
+        <th>Sistem Warden</th>
         <td>
             <a href="index.php?menu=home">Home</a>
             ::
