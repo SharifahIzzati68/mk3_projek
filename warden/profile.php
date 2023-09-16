@@ -86,7 +86,7 @@ $kata = $row->kata;
 </table>
 
 <h2>Edit Profile</h2>
-<form action="index.php?menu=about" method="post">
+<form action="index.php?menu=profile" method="post">
     <input type="hidden" name="update_profile" value="1">
     <label for="new_namawarden">New Name:</label>
     <label>
@@ -102,7 +102,7 @@ $kata = $row->kata;
 </form>
 
 <h2>Change Password</h2>
-<form action="index.php?menu=about" method="post">
+<form action="index.php?menu=profile" method="post">
     <input type="hidden" name="reset_password" value="1">
     <label for="new_password">New Password:</label>
     <label>
