@@ -105,7 +105,6 @@ if (!isset($_GET['edit'])) {
             <td><?php echo $bil++; ?></td>
             <td><?php echo $row->namawarden; ?></td>
             <td><?php echo $row->nokpwarden; ?></td>
-            <td><?php echo $row->kata; ?></td>
             <td>
                 <a href="resetpass.php?nokpwarden=<?php echo $row->nokpwarden; ?>&idwarden=<?php echo $row->idwarden; ?>">Reset
                     Kata Laluan</a>
