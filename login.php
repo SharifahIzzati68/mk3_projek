@@ -16,7 +16,7 @@ if ($idpengguna == 'admin') {
     } else {
         ?>
         <script>
-            alert('1.Maaf, kata laluan salah.');
+            alert('Maaf, kata laluan salah.');
             window.location = './';
         </script>
         <?php
@@ -34,7 +34,7 @@ if ($idpengguna == 'admin') {
         } else {
             ?>
             <script>
-                alert('2.Maaf, kata laluan salah.');
+                alert('Maaf, kata laluan salah.');
                 window.location = './';
             </script>
             <?php
@@ -52,7 +52,7 @@ if ($idpengguna == 'admin') {
             } else {
                 ?>
                 <script>
-                    alert('3.Maaf, kata laluan salah.');
+                    alert('Maaf, kata laluan salah.');
                     window.location = './';
                 </script>
                 <?php
@@ -60,7 +60,7 @@ if ($idpengguna == 'admin') {
         } else {
             ?>
             <script>
-                alert('4.Maaf, ID pengguna/kata laluan salah.');
+                alert('Maaf, ID pengguna/kata laluan salah.');
                 window.location = './';
             </script>
             <?php
