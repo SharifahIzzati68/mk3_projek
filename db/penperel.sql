@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 12, 2023 at 07:27 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Generation Time: Sep 16, 2023 at 08:16 AM
+-- Server version: 5.7.33
+-- PHP Version: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `idadmin` int NOT NULL,
-  `kata` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
+  `idadmin` int(11) NOT NULL,
+  `kata` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`idadmin`, `kata`) VALUES
+(1, '$2y$10$2D1xKoHiE8RQFF.RrzHj7.N2MDxb7DueV0sZn2RHk7Imryh6yl8we');
 
 -- --------------------------------------------------------
 
@@ -39,19 +46,22 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `pelajar` (
-  `idpelajar` int NOT NULL,
-  `warden` int NOT NULL,
+  `idpelajar` int(11) NOT NULL,
+  `warden` int(11) NOT NULL,
   `namapelajar` varchar(250) NOT NULL,
-  `nokppelajar` int NOT NULL,
-  `kata` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
+  `nokppelajar` varchar(12) NOT NULL,
+  `kata` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pelajar`
 --
 
 INSERT INTO `pelajar` (`idpelajar`, `warden`, `namapelajar`, `nokppelajar`, `kata`) VALUES
-(1, 1, 'amani', 1234, '25');
+(5, 1, 'aishah', '012345678912', '$2y$10$xZOgrwEOI8mvjE8KxDlHOeKCct4k2EhFISM1of/ykboVlBIstVMkm'),
+(7, 3, 'akid', '012020021561', '$2y$10$kZS3v090Ypj6Pc9LQJWOCOKA46TZjYARw6qcLSDYWd2Uth1o6w5DS'),
+(8, 3, 'ayan', '031203025421', '$2y$10$00Cp2QdWNayHZgvnIw1T3OrWDhh6w8Ky38RMIttg81pn0u9jxQYH.'),
+(9, 3, 'aliya', '061114064587', '$2y$10$n41o1RVfsmqC0l2xQH8Wd.cuBkIoAjPqZhdMxlOjNteIkJfrXd1mO');
 
 -- --------------------------------------------------------
 
@@ -60,19 +70,23 @@ INSERT INTO `pelajar` (`idpelajar`, `warden`, `namapelajar`, `nokppelajar`, `kat
 --
 
 CREATE TABLE `peralatan` (
-  `idperalatan` int NOT NULL,
-  `pelajar` int NOT NULL,
+  `idperalatan` int(11) NOT NULL,
+  `pelajar` int(11) NOT NULL,
   `jenisperalatan` varchar(255) NOT NULL,
   `jenama` varchar(255) NOT NULL,
   `nosiri` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `peralatan`
 --
 
 INSERT INTO `peralatan` (`idperalatan`, `pelajar`, `jenisperalatan`, `jenama`, `nosiri`) VALUES
-(1, 1, 'kipas', 'LG', '1');
+(2, 7, 'Lampu Bilik', 'Panasonic', '123'),
+(3, 5, 'Rice Cooker', 'panasonic', '456'),
+(4, 9, 'meja', 'Norberg', '154'),
+(5, 9, 'lampu', 'lg', 'L098'),
+(6, 9, 'lampu', 'lg', 'l23');
 
 -- --------------------------------------------------------
 
@@ -81,18 +95,19 @@ INSERT INTO `peralatan` (`idperalatan`, `pelajar`, `jenisperalatan`, `jenama`, `
 --
 
 CREATE TABLE `warden` (
-  `idwarden` int NOT NULL,
+  `idwarden` int(11) NOT NULL,
   `namawarden` varchar(250) NOT NULL,
-  `nokpwarden` int NOT NULL,
-  `kata` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8mb4_general_ci;
+  `nokpwarden` int(11) NOT NULL,
+  `kata` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `warden`
 --
 
 INSERT INTO `warden` (`idwarden`, `namawarden`, `nokpwarden`, `kata`) VALUES
-(1, 'anis', 1234, '25');
+(1, 'zati', 1035, '$2y$10$nSd.3l8ubtt52jz625web.XowWaj8VOiuso80iAnNCuVQiVxabUSa'),
+(3, 'qur', 7890, '$2y$10$4W3VHyc/ZKHeH3q9rBNO7uHKPfzw/L9XXm9/ZyRiEyBRm7d7jWNee');
 
 --
 -- Indexes for dumped tables
@@ -132,25 +147,25 @@ ALTER TABLE `warden`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `idadmin` int NOT NULL AUTO_INCREMENT;
+  MODIFY `idadmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pelajar`
 --
 ALTER TABLE `pelajar`
-  MODIFY `idpelajar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idpelajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `peralatan`
 --
 ALTER TABLE `peralatan`
-  MODIFY `idperalatan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idperalatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `warden`
 --
 ALTER TABLE `warden`
-  MODIFY `idwarden` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idwarden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -160,13 +175,13 @@ ALTER TABLE `warden`
 -- Constraints for table `pelajar`
 --
 ALTER TABLE `pelajar`
-  ADD CONSTRAINT `test` FOREIGN KEY (`warden`) REFERENCES `warden` (`idwarden`);
+  ADD CONSTRAINT `test` FOREIGN KEY (`warden`) REFERENCES `warden` (`idwarden`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `peralatan`
 --
 ALTER TABLE `peralatan`
-  ADD CONSTRAINT `test2` FOREIGN KEY (`pelajar`) REFERENCES `pelajar` (`idpelajar`);
+  ADD CONSTRAINT `test2` FOREIGN KEY (`pelajar`) REFERENCES `pelajar` (`idpelajar`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

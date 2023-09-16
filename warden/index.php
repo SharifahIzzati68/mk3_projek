@@ -17,15 +17,15 @@ $namawarden = $row->namawarden;
     <title>Warden</title>
 </head>
 <body>
-<?php echo "Selamat Datang $namawarden"; ?>
+<h2><?php echo "Selamat Datang $namawarden"; ?></h2>
 <p><a href="../logout.php">LOGOUT</a></p>
 <table>
     <tr>
         <td>System</td>
         <td>
-            <a href="index.php?menu=Student">Student</a>
+            <a href="index.php?menu=Student">Student List</a>
             ::
-            <a href="index.php?menu=peralatanP">Peralatan</a>
+            <a href="index.php?menu=peralatanP">Equipment List</a>
             ::
             <a href="index.php?menu=about">About</a>
         </td>
