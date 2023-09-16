@@ -22,9 +22,9 @@ $nokppelajar = $row->nokppelajar;
 <p><a href="../logout.php">LOGOUT</a></p>
 <table>
     <tr>
-        <td>Sistem Pelajar/td>
+        <td>Sistem Pelajar</td>
         <td>
-            <a href="index.php?menu=home">Home Pelajar</a>
+            <a href="index.php?menu=home">Home</a>
             ::
             <a href="index.php?menu=peralatan">Senarai Peralatan</a>
             ::
