@@ -21,17 +21,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $sql = "UPDATE admin SET kata = '$hash_password' WHERE idadmin = $idadmin";
                 $conn->query($sql);
 
-                header('location: index.php?menu=profile');
-                exit;
+                // Update the user's password in the database
+                $update_sql = "UPDATE admin SET kata = '$hashed_password' WHERE idadmin = '$idadmin'";
+                if ($conn->query($update_sql)) {
+                    echo "Password updated successfully!";
+                } else {
+                    echo "Error updating password: " . $conn->error;
+                }
             } else {
-                echo "New password and confirm password do not match.";
+                echo "New password and confirm new password do not match.";
             }
         } else {
             echo "Current password is incorrect.";
         }
     } else {
-        echo "Error fetching current password.";
+        echo "Error fetching current password: " . $conn->error;
     }
-} else {
-    echo "Invalid request method. Please use a POST request.";
 }

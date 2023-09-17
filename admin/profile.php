@@ -1,9 +1,63 @@
 <?php
 require '../include/conn.php';
-if (!isset($_SESSION['idadmin'])) header('location: ../');
+if (!isset($_SESSION['idadmin'])) {
+    header('location: ../');
+    exit;
+}
+
 $idadmin = $_SESSION['idadmin'];
-$sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
-$row = $conn->query($sql)->fetch_object();
+
+if (isset($_POST['idadmin'])) {
+    $idadmin = $_POST['idadmin'];
+    $current_password = $_POST['current_password'];
+    $new_password = $_POST['new_password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    // Check if the current password is correct
+    $sql = "SELECT kata FROM admin WHERE idadmin = $idadmin";
+    $result = $conn->query($sql);
+
+    if ($result && $row = $result->fetch_object()) {
+        $hashed_password = $row->kata;
+
+        if (password_verify($current_password, $hashed_password)) {
+            // Check if the new password and confirm password match
+            if ($new_password === $confirm_password) {
+                $hash_password = password_hash($new_password, PASSWORD_BCRYPT);
+                $sql = "UPDATE admin SET kata = '$hash_password' WHERE idadmin = $idadmin";
+                if ($conn->query($sql)) {
+                    echo "Password updated successfully!";
+                } else {
+                    echo "Error updating password: " . $conn->error;
+                }
+            } else {
+                echo "New password and confirm new password do not match.";
+            }
+        } else {
+            echo "Current password is incorrect.";
+        }
+    } else {
+        echo "Error fetching current password: " . $conn->error;
+    }
+}
+
+// Fetch the warden's current profile information
+$sql = "SELECT * FROM admin WHERE idadmin = '$idadmin'";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    echo "Error: " . $conn->error;
+    exit;
+}
+
+$row = $result->fetch_object();
+
+if (!$row) {
+    echo "No data found for this warden.";
+    exit;
+}
+
 $idadmin = $row->idadmin;
 ?>
 
@@ -17,7 +71,7 @@ $idadmin = $row->idadmin;
     <title>Admin</title>
 </head>
 <body>
-<form action="resetpassadmin.php" method="post">
+<form action="index.php?menu=profile" method="post">
     <input type="hidden" name="idadmin" value="<?php echo $row->idadmin; ?>">
     <fieldset>
         <legend><h1>Change password</h1></legend>
