@@ -8,4 +8,4 @@ $sql = "UPDATE warden
 SET kata = '$hash_password'
 WHERE idwarden = $idwarden";
 $conn->query($sql);
-header('location: index.php');
+header('location: index.php?menu=warden');

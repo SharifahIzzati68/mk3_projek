@@ -1,13 +1,45 @@
 <?php
-/** @var object $conn */
-$conn;
 require '../include/conn.php';
-if (!isset($_SESSION['idadmin'])) header('location: ../');
+
+if (!isset($_SESSION['idadmin'])) {
+    header('location: ../');
+    exit; // Ensure script execution stops after redirection
+}
+
 $idadmin = $_SESSION['idadmin'];
 $sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
 $row = $conn->query($sql)->fetch_object();
 $namapelajar = $row->idadmin;
+
+// Initialize variables for search results
+$searchResults = [];
+$searchMessage = '';
+
+// Check if 'nosiri' is set in the POST data
+if (isset($_POST['nosiri'])) {
+    $nosiri = $_POST['nosiri'];
+
+    // Query the equipment based on the serial number.
+    $sql = "SELECT peralatan.nosiri, pelajar.namapelajar AS nama_pelajar, warden.namawarden AS nama_warden
+            FROM peralatan
+            INNER JOIN pelajar ON peralatan.pelajar = pelajar.idpelajar
+            INNER JOIN warden ON pelajar.warden = warden.idwarden
+            WHERE peralatan.nosiri = '$nosiri'";
+
+    $result = $conn->query($sql);
+
+    if ($result !== false && $result->num_rows > 0) {
+        // Store search results in an array
+        while ($row = $result->fetch_object()) {
+            $searchResults[] = $row;
+        }
+    } else {
+        // No equipment found for the provided serial number.
+        $searchMessage = "No equipment found for the provided serial number.";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,18 +47,15 @@ $namapelajar = $row->idadmin;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-
 </head>
 <body>
-
-<form action="peralatanA.php" method="post">
+<form action="index.php?menu=peralatanA" method="post">
     <fieldset>
         <legend>Carian</legend>
         <table>
             <tr>
                 <td>No Siri Peralatan</td>
                 <td><input type="text" name="nosiri"></td>
-
                 <td colspan="2">
                     <button type="submit">Cari</button>
                 </td>
@@ -34,49 +63,28 @@ $namapelajar = $row->idadmin;
         </table>
     </fieldset>
 </form>
-<?php
-// Your database connection code (require 'conn.php') should be here.
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['nosiri'])) {
-// Handle the equipment search here.
-$nosiri = $_POST['nosiri'];
-
-// Query the equipment based on the serial number.
-$sql = "SELECT peralatan.nosiri, pelajar.namapelajar AS nama_pelajar, warden.namawarden AS nama_warden
-        FROM peralatan
-        INNER JOIN pelajar ON peralatan.pelajar = pelajar.idpelajar
-        INNER JOIN warden ON pelajar.warden = warden.idwarden
-        WHERE peralatan.nosiri = '$nosiri'";
-
-$result = $conn->query($sql);
-?>
-    <!-- Display the equipment results here -->
-<table class="table">
-    <tr>
-        <th>Bil</th>
-        <th>Nama Pelajar</th>
-        <th>Nama Warden</th>
-        <th>No. Siri Peralatan</th>
-    </tr>
-    <?php
-    $bil = 1;
-    while ($row = $result->fetch_object()) {
-        ?>
+<!-- Display search results here -->
+<?php if (!empty($searchResults)) { ?>
+    <h2>Search Results</h2>
+    <table border="1">
         <tr>
-            <td><?php echo $bil++; ?></td>
-            <td><?php echo $row->nama_pelajar; ?></td>
-            <td><?php echo $row->nama_warden; ?></td>
-            <td><?php echo $row->nosiri; ?></td>
+            <th>Bil</th>
+            <th>Nama Pelajar</th>
+            <th>Nama Warden</th>
+            <th>No. Siri Peralatan</th>
         </tr>
-        <?php
-    }
-    ?>
-    <?php
-    }
-    ?>
-</table>
-
-
+        <?php foreach ($searchResults as $bil => $result) { ?>
+            <tr>
+                <td><?php echo $bil + 1; ?></td>
+                <td><?php echo $result->nama_pelajar; ?></td>
+                <td><?php echo $result->nama_warden; ?></td>
+                <td><?php echo $result->nosiri; ?></td>
+            </tr>
+        <?php } ?>
+    </table>
+<?php } else if (!empty($searchMessage)) { ?>
+    <p><?php echo $searchMessage; ?></p>
+<?php } ?>
 </body>
 </html>
-

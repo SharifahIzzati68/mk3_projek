@@ -1,4 +1,5 @@
-<?php global $conn;
+<?php
+
 require '../include/conn.php';
 $namawarden = $_POST['namawarden'];
 $nokpwarden = $_POST['nokpwarden'];
@@ -14,7 +15,7 @@ $sql = "INSERT INTO warden (namawarden, nokpwarden, kata) VALUES ('$namawarden',
 $result = $conn->query($sql);
 
 if ($result) {
-header('location: index.php');
+header('location: index.php?menu=warden');
 exit;
 } else {
 echo "Error: " . $conn->error;
