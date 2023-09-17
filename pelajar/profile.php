@@ -119,7 +119,7 @@ $namawarden = $row->namawarden;
     </tr>
 </table>
 
-<form action="profile.php" method="post">
+<form action="index.php?menu=profile" method="post">
     <input type="hidden" name="update_profile" value="1">
     <fieldset>
         <legend><h2>Edit Profile</h2></legend>
@@ -157,7 +157,7 @@ $namawarden = $row->namawarden;
     </fieldset>
 </form>
 
-<form action="profile.php" method="post">
+<form action="index.php?menu=profile" method="post">
     <input type="hidden" name="reset_password" value="1">
     <fieldset>
         <legend>
