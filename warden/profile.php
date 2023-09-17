@@ -1,9 +1,6 @@
 <?php
-/** @var object $conn */
-$conn;
 require '../include/conn.php';
 
-// Check if the user is logged in as a warden
 if (!isset($_SESSION['idwarden'])) {
     header('location: ../');
     exit;
@@ -12,24 +9,44 @@ if (!isset($_SESSION['idwarden'])) {
 $idwarden = $_SESSION['idwarden'];
 
 // Check if the password reset form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
-    // Get the new password from the form
+if (isset($_POST['reset_password'])) {
+    // Get the new password and confirm password from the form
     $new_password = $_POST['new_password'];
+    $confirm_password = $_POST['confirm_password'];
 
-    // Hash the new password (for security)
-    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+    // Check if the new password matches the confirm password
+    if ($new_password === $confirm_password) {
+        // Fetch the warden's current hashed password
+        $fetch_password_sql = "SELECT kata FROM warden WHERE idwarden = '$idwarden'";
+        $password_result = $conn->query($fetch_password_sql);
 
-    // Update the warden's password in the database
-    $update_sql = "UPDATE warden SET kata = '$hashed_password' WHERE idwarden = '$idwarden'";
-    if ($conn->query($update_sql)) {
-        echo "Password updated successfully!";
+        if ($password_result && $password_result->num_rows > 0) {
+            $current_password = $password_result->fetch_object()->kata;
+
+            // Check if the entered current password matches the stored password
+            if (password_verify($_POST['current_password'], $current_password)) {
+                // Hash the new password (for security)
+                $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+
+                // Update the warden's password in the database
+                $update_sql = "UPDATE warden SET kata = '$hashed_password' WHERE idwarden = '$idwarden'";
+                if ($conn->query($update_sql)) {
+                    echo "Password updated successfully!";
+                } else {
+                    echo "Error updating password: " . $conn->error;
+                }
+            } else {
+                echo "Current password is incorrect.";
+            }
+        } else {
+            echo "Error fetching current password: " . $conn->error;
+        }
     } else {
-        echo "Error updating password: " . $conn->error;
+        echo "New password and confirm password do not match.";
     }
 }
-
 // Check if the edit form has been submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_profile'])) {
+if (isset($_POST['update_profile'])) {
     // Get the updated profile information from the form
     $new_namawarden = $_POST['new_namawarden'];
     $new_nokpwarden = $_POST['new_nokpwarden'];
@@ -69,47 +86,105 @@ $kata = $row->kata;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../include/spel.css">
     <title>Profile</title>
 </head>
 <body>
 <h1>Profile</h1>
-<table border="1">
+<table>
     <tr>
-        <th>Nama warden</th>
-        <td><?php echo $namawarden; ?></td>
+        <th class="tableprofile">Nama warden</th>
+        <td class="tableprofile"><?php echo $namawarden; ?></td>
     </tr>
     <tr>
-        <th>No KP warden</th>
-        <td><?php echo $nokpwarden; ?></td>
+        <th class="tableprofile">No KP warden</th>
+        <td class="tableprofile"><?php echo $nokpwarden; ?></td>
     </tr>
 </table>
 
-<h2>Edit Profile</h2>
 <form action="index.php?menu=profile" method="post">
     <input type="hidden" name="update_profile" value="1">
-    <label for="new_namawarden">New Name:</label>
-    <label>
-        <input type="text" name="new_namawarden" value="<?php echo $namawarden; ?>" required>
-    </label>
-    <br>
-    <label for="new_nokpwarden">New IC Number:</label>
-    <label>
-        <input type="text" name="new_nokpwarden" value="<?php echo $nokpwarden; ?>" required minlength="12" maxlength="12">
-    </label>
-    <br>
-    <button type="submit">Update Profile</button>
+    <fieldset>
+        <legend>
+            <h2>Edit Profile</h2>
+        </legend>
+        <table>
+            <tr>
+                <th>
+                    <label for="new_namawarden">New Name:</label>
+                </th>
+                <td>
+                    <label>
+                        <input type="text" name="new_namawarden" value="<?php echo $namawarden; ?>" required>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="new_nokpwarden">New IC Number:</label>
+                </th>
+                <td><label>
+                        <input type="text" name="new_nokpwarden" value="<?php echo $nokpwarden; ?>" required minlength="12" maxlength="12">
+                    </label></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Update Profile</button>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </fieldset>
 </form>
 
-<h2>Change Password</h2>
 <form action="index.php?menu=profile" method="post">
     <input type="hidden" name="reset_password" value="1">
-    <label for="new_password">New Password:</label>
-    <label>
-        <input type="password" name="new_password" required>
-    </label>
-    <button type="submit">Change Password</button>
+    <fieldset>
+        <legend>
+            <h2>Change Password</h2>
+        </legend>
+        <table>
+            <tr>
+                <th>
+                    <label for="current_password">Current Password:</label>
+                </th>
+                <td>
+                    <label>
+                        <input type="password" name="current_password" required>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="new_password">New Password:</label>
+                </th>
+                <td>
+                    <label>
+                        <input type="password" name="new_password" required>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="confirm_password">Confirm Password:</label>
+                </th>
+                <td>
+                    <label>
+                        <input type="password" name="confirm_password" required>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Change Password</button>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </fieldset>
 </form>
 </body>
 </html>

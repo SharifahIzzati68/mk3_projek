@@ -1,5 +1,4 @@
 <?php
-global $conn;
 require '../include/conn.php';
 $idpelajar = $_GET['idpelajar'];
 $nokppelajar= $_GET['nokppelajar'];
@@ -13,4 +12,4 @@ if ($conn->query($sql)) {
 } else {
     echo "Error updating password: " . $conn->error;
 }
-header('location: index.php');
+header('location: index.php?menu=Student');

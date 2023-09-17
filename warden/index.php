@@ -17,8 +17,8 @@ $namawarden = $row->namawarden;
     <title>Warden</title>
 </head>
 <body>
-<h2><?php echo "Selamat Datang $namawarden"; ?></h2>
-<p><a href="../logout.php">LOGOUT</a></p>
+<h1><?php echo "Selamat Datang $namawarden"; ?></h1>
+<p></p>
 <table>
     <tr>
         <td>System</td>
@@ -27,7 +27,9 @@ $namawarden = $row->namawarden;
             ::
             <a href="index.php?menu=peralatanP">Equipment List</a>
             ::
-            <a href="index.php?menu=profile">About</a>
+            <a href="index.php?menu=profile">Profile</a>
+            ::
+            <a href="../logout.php">Logout</a>
         </td>
     </tr>
 </table>

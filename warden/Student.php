@@ -1,5 +1,4 @@
 <?php
-global $conn;
 require '../include/conn.php';
 if (!isset($_SESSION['idwarden'])) header('location: ../');
 $idwarden = $_SESSION['idwarden'];
@@ -55,7 +54,7 @@ if (!isset($_GET['edit'])) {
     $sql = "SELECT * FROM pelajar WHERE idpelajar = $idpelajar";
     $row = $conn->query($sql)->fetch_object();
     ?>
-    <form action="kemaskini.php" method="post">
+    <form action="kemaskini.php?menu=Student" method="post">
         <input type="hidden" name="idpelajar" value="<?php echo $row->idpelajar; ?>">
         <fieldset>
             <legend>Kemaskini Data Pelajar</legend>
@@ -85,7 +84,6 @@ if (!isset($_GET['edit'])) {
         </fieldset>
     </form>
     <br>
-    <a href="index.php?menu=peralatan">Kembali ke Senarai Peralatan</a>
     <?php
 }
 ?>
@@ -111,6 +109,7 @@ if (!isset($_GET['edit'])) {
             <td class="tr3">
                 <a href="resestpassp.php?nokppelajar=<?php echo $row->nokppelajar; ?>&idpelajar=<?php echo $row->idpelajar; ?>">Reset
                     Kata Laluan</a>
+                |
                 <a href="index.php?edit=<?php echo $row->idpelajar; ?>& menu=Student">Edit</a>
                 |
                 <a href="padam.php?idpelajar=<?php echo $row->idpelajar; ?>"

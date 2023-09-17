@@ -1,5 +1,5 @@
 <?php
-global $conn;
+
 require '../include/conn.php';
 $idpelajar = $_POST['idpelajar'];
 $namapelajar = $_POST['namapelajar'];
