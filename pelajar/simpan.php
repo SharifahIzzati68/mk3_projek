@@ -1,5 +1,4 @@
 <?php
-/** @var object $conn */
 require '../include/conn.php';
 
 // Validate and sanitize user input
