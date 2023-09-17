@@ -1,10 +1,21 @@
 <?php
-require '../include/conn.php';
 /** @var object $conn */
+require '../include/conn.php';
 // Validate and sanitize user input
 $jenisperalatan =  $_POST['jenisperalatan'];
 $nosiri =  $_POST['nosiri'];
 $jenama =  $_POST['jenama'];
+
+// Check if the nosiri already exists
+$check_sql = "SELECT COUNT(*) AS count FROM peralatan WHERE nosiri = '$nosiri'";
+$check_result = $conn->query($check_sql);
+$row = $check_result->fetch_assoc();
+
+if ($row['count'] > 0) {
+    // Redirect back to the nosiri registration page with an error message
+    header('location: index.php?menu=peralatan&error=exists');
+    exit;
+}
 
 // Check if input is valid
 if (empty($jenisperalatan) || empty($nosiri) || empty($jenama))

@@ -1,11 +1,16 @@
 <?php
-require_once '../include/conn.php';
-if (!isset($_SESSION['idpelajar'])) {
-    header('location: ../');
-    exit;
-}
+/** @var object $conn */
+/** @var string $idpelajar */
 
-$idpelajar = $_SESSION['idpelajar'];
+// Check for error messages from simpan.php
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+    if ($error === 'exists') {
+        $error_message = "Equipment with this serial number already exists for you.";
+    } elseif ($error === 'invalid') {
+        $error_message = "Invalid input. Please fill in all fields correctly.";
+    }
+}
 
 $sql = "SELECT namapelajar FROM pelajar WHERE idpelajar = $idpelajar";
 $row = $conn->query($sql)->fetch_object();
@@ -24,6 +29,10 @@ $namapelajar = $row->namapelajar;
 <body>
 
 <?php
+
+if (isset($error_message)) {
+    echo '<p class="error">' . $error_message . '</p>';
+}
 if (!isset($_GET['edit'])) {
     ?>
     <form action="simpan.php" method="post">

@@ -5,8 +5,19 @@ require '../include/conn.php';
 $namapelajar = $_POST['namapelajar'];
 $nokppelajar = $_POST['nokppelajar'];
 $katas = $_POST['nokppelajar'];
-$kata = password_hash($katas, PASSWORD_BCRYPT);
 
+
+// Check if the nosiri already exists
+$check_sql = "SELECT COUNT(*) AS count FROM pelajar WHERE nokppelajar = '$nokppelajar'";
+$check_result = $conn->query($check_sql);
+$row = $check_result->fetch_assoc();
+
+if ($row['count'] > 0) {
+    // Redirect back to the warden registration page with an error message
+    header('location: index.php?menu=Student&error=exists');
+    exit;
+}
+$kata = password_hash($katas, PASSWORD_BCRYPT);
 // Check if input is valid
 if (empty($namapelajar) || empty($kata) || empty($nokppelajar) || strlen($nokppelajar) !== 12) {
     echo "Invalid input. Please fill in all fields correctly.";

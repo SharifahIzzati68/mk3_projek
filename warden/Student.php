@@ -1,6 +1,17 @@
 <?php
 /** @var object $conn */
 /** @var string $idwarden */
+
+// Check for error messages from simpan.php
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+    if ($error === 'exists') {
+        $error_message =  "The Student's Identification Number already exists in the database.";
+    } elseif ($error === 'invalid') {
+        $error_message = "Invalid input. Please fill in all fields correctly.";
+    }
+}
+
 $sql = "SELECT namawarden FROM warden WHERE idwarden = $idwarden";
 $row = $conn->query($sql)->fetch_object();
 $namawarden = $row->namawarden;
@@ -17,11 +28,14 @@ $namawarden = $row->namawarden;
 <body>
 <h2>Student List</h2>
 <?php
+if (isset($error_message)) {
+    echo '<p class="error">' . $error_message . '</p>';
+}
 if (!isset($_GET['edit'])) {
     ?>
     <form action="simpan.php" method="post">
         <fieldset>
-            <legend>Daftar Pelajar</legend>
+            <legend><h2>Daftar Pelajar</h2></legend>
             <table>
                 <tr>
                     <td>Nama Pelajar</td>
