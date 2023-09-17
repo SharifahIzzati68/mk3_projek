@@ -8,7 +8,7 @@
     padding-left: 50px;
     padding-right: 50px;
 }
-.tr3{
+.tr3,.tableprofile, .tableadmin{
     border: 2px solid black;
     padding-left: 30px;
     padding-right: 30px;

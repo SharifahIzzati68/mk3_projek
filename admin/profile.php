@@ -13,24 +13,25 @@ $idadmin = $row->idadmin;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/spel.css">
     <title>Admin</title>
 </head>
 <body>
 <form action="resetpassadmin.php" method="post">
     <input type="hidden" name="idadmin" value="<?php echo $row->idadmin; ?>">
     <fieldset>
-        <legend>Change password</legend>
+        <legend><h1>Change password</h1></legend>
         <table>
             <tr>
-                <td>Current Password</td>
+                <th>Current Password</th>
                 <td><input type="password" name="current_password" required></td>
             </tr>
             <tr>
-                <td>New Password</td>
+                <th>New Password</th>
                 <td><input type="password" name="new_password" required></td>
             </tr>
             <tr>
-                <td>Confirm New Password</td>
+                <th>Confirm New Password</th>
                 <td><input type="password" name="confirm_password" required></td>
             </tr>
             <tr>
@@ -39,6 +40,7 @@ $idadmin = $row->idadmin;
                 </td>
             </tr>
         </table>
+        <br>
     </fieldset>
 </form>
 </body>

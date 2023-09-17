@@ -12,6 +12,7 @@ $namapelajar = $row->idadmin; ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/spel.css">
     <title>Admin</title>
 
 </head>
@@ -25,11 +26,11 @@ if (!isset($_GET['edit'])) {
             <legend><h1>Daftar Warden Baru</h1></legend>
             <table>
                 <tr>
-                    <td>Nama warden</td>
+                    <th>Nama warden</th>
                     <td><input type="text" name="namawarden"></td>
                 </tr>
                 <tr>
-                    <td>No. KP</td>
+                    <th>No. KP Warden</th>
                     <td><input type="text" name="nokpwarden" required maxlength="12" minlength="12"></td>
                 </tr>
                 <tr>
@@ -39,6 +40,7 @@ if (!isset($_GET['edit'])) {
                     </td>
                 </tr>
             </table>
+            <br>
         </fieldset>
     </form>
     <?php
@@ -53,12 +55,12 @@ if (!isset($_GET['edit'])) {
             <legend><h1>Kemaskini Data Warden</h1></legend>
             <table>
                 <tr>
-                    <td>Nama Warden</td>
+                    <th>Nama Warden</th>
                     <td><input type="text" name="namawarden"
                                required value="<?php echo $row->namawarden; ?>"></td>
                 </tr>
                 <tr>
-                    <td>No. KP</td>
+                    <th>No. KP Warden</th>
                     <td><input type="text" name="nokpwarden"
                                required value="<?php echo $row->nokpwarden; ?>" minlength="12"
                                maxlength="12"></td>
@@ -70,6 +72,7 @@ if (!isset($_GET['edit'])) {
                     </td>
                 </tr>
             </table>
+            <br>
         </fieldset>
     </form>
     <br>
@@ -81,12 +84,12 @@ if (!isset($_GET['edit'])) {
 <br>
 <h2>Senarai Warden</h2>
 
-<table  border="1">
+<table>
     <tr>
-        <th>Bil</th>
-        <th>Nama Warden</th>
-        <th>No. KP</th>
-        <th>Tindakan</th>
+        <th class="tableadmin">Bil</th>
+        <th class="tableadmin">Nama Warden</th>
+        <th class="tableadmin">No. KP Warden</th>
+        <th class="tableadmin">Tindakan</th>
     </tr>
     <?php
     $bil = 1;
@@ -95,10 +98,10 @@ if (!isset($_GET['edit'])) {
     while ($row = $result->fetch_object()) {
         ?>
         <tr>
-            <td><?php echo $bil++; ?></td>
-            <td><?php echo $row->namawarden; ?></td>
-            <td><?php echo $row->nokpwarden; ?></td>
-            <td>
+            <td class="tableadmin"><?php echo $bil++; ?></td>
+            <td class="tableadmin"><?php echo $row->namawarden; ?></td>
+            <td class="tableadmin"><?php echo $row->nokpwarden; ?></td>
+            <td class="tableadmin">
                 <a href="resetpass.php?nokpwarden=<?php echo $row->nokpwarden; ?>&idwarden=<?php echo $row->idwarden; ?>">Reset
                     Kata Laluan</a>
                 |

@@ -46,40 +46,42 @@ if (isset($_POST['nosiri'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../include/spel.css">
     <title>Admin</title>
 </head>
 <body>
 <form action="index.php?menu=peralatanA" method="post">
     <fieldset>
-        <legend>Carian</legend>
+        <legend><h1>Carian</h1></legend>
         <table>
             <tr>
-                <td>No Siri Peralatan</td>
+                <th>No Siri Peralatan</th>
                 <td><input type="text" name="nosiri"></td>
                 <td colspan="2">
                     <button type="submit">Cari</button>
                 </td>
             </tr>
         </table>
+        <br>
     </fieldset>
 </form>
 
 <!-- Display search results here -->
 <?php if (!empty($searchResults)) { ?>
-    <h2>Search Results</h2>
-    <table border="1">
+    <h2>Hasil Carian</h2>
+    <table>
         <tr>
-            <th>Bil</th>
-            <th>Nama Pelajar</th>
-            <th>Nama Warden</th>
-            <th>No. Siri Peralatan</th>
+            <th class="tableadmin">Bil</th>
+            <th class="tableadmin">Nama Pelajar</th>
+            <th class="tableadmin">Nama Warden</th>
+            <th class="tableadmin">No. Siri Peralatan</th>
         </tr>
         <?php foreach ($searchResults as $bil => $result) { ?>
             <tr>
-                <td><?php echo $bil + 1; ?></td>
-                <td><?php echo $result->nama_pelajar; ?></td>
-                <td><?php echo $result->nama_warden; ?></td>
-                <td><?php echo $result->nosiri; ?></td>
+                <td class="tableadmin"><?php echo $bil + 1; ?></td>
+                <td class="tableadmin"><?php echo $result->nama_pelajar; ?></td>
+                <td class="tableadmin"><?php echo $result->nama_warden; ?></td>
+                <td class="tableadmin"><?php echo $result->nosiri; ?></td>
             </tr>
         <?php } ?>
     </table>
