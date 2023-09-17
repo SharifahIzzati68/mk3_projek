@@ -78,15 +78,21 @@ $idadmin = $row->idadmin;
         <table>
             <tr>
                 <th>Current Password</th>
-                <td><input type="password" name="current_password" required></td>
+                <td><label>
+                        <input type="password" name="current_password" required>
+                    </label></td>
             </tr>
             <tr>
                 <th>New Password</th>
-                <td><input type="password" name="new_password" required></td>
+                <td><label>
+                        <input type="password" name="new_password" required>
+                    </label></td>
             </tr>
             <tr>
                 <th>Confirm New Password</th>
-                <td><input type="password" name="confirm_password" required></td>
+                <td><label>
+                        <input type="password" name="confirm_password" required>
+                    </label></td>
             </tr>
             <tr>
                 <td colspan="2">
