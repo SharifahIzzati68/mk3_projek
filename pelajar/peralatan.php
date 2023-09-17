@@ -1,12 +1,22 @@
 <?php
-global $conn;
-require '../include/conn.php';
-if (!isset($_SESSION['idpelajar'])) header('location: ../');
+require_once '../include/conn.php';
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['idpelajar'])) {
+    header('location: ../');
+    exit;
+}
+
 $idpelajar = $_SESSION['idpelajar'];
+
 $sql = "SELECT namapelajar FROM pelajar WHERE idpelajar = $idpelajar";
 $row = $conn->query($sql)->fetch_object();
 $namapelajar = $row->namapelajar;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +46,7 @@ if (!isset($_GET['edit'])) {
                     <td>No Siri</td>
                     <td>
                         <label>
-                            <input type="text" name="nosiri" >
+                            <input type="text" name="nosiri">
                         </label>
                     </td>
                 </tr>
@@ -44,7 +54,7 @@ if (!isset($_GET['edit'])) {
                     <td>Jenama</td>
                     <td>
                         <label>
-                            <input type="text" name="jenama" >
+                            <input type="text" name="jenama">
                         </label>
                     </td>
                 </tr>
@@ -61,7 +71,7 @@ if (!isset($_GET['edit'])) {
     <?php
 } else {
     $idperalatan = $_GET['edit'];
-    $sql = "SELECT * FROM peralatan WHERE idperalatan = $idperalatan ORDER BY pelajar";
+    $sql = "SELECT * FROM peralatan WHERE idperalatan = $idperalatan AND pelajar = $idpelajar ORDER BY pelajar";
     $row = $conn->query($sql)->fetch_object();
     ?>
     <form action="kemaskini.php?" method="post">
@@ -102,8 +112,6 @@ if (!isset($_GET['edit'])) {
             <br>
         </fieldset>
     </form>
-    <br>
-    <a href="index.php?menu=peralatan">Kembali ke Senarai Peralatan</a>
     <?php
 }
 ?>
@@ -119,7 +127,7 @@ if (!isset($_GET['edit'])) {
     </tr>
     <?php
     $bil = 1;
-    $sql = "SELECT * FROM peralatan WHERE pelajar = '$idpelajar'";
+    $sql = "SELECT * FROM peralatan WHERE pelajar = $idpelajar";
     $result = $conn->query($sql);
     while ($row = $result->fetch_object()) {
         ?>
@@ -129,7 +137,7 @@ if (!isset($_GET['edit'])) {
             <td class="tableprofile"><?php echo $row->nosiri; ?></td>
             <td class="tableprofile"><?php echo $row->jenama; ?></td>
             <td class="tableprofile">
-                <a href="index.php?edit=<?php echo $row->idperalatan; ?> & menu=peralatan">Edit</a>
+                <a href="index.php?edit=<?php echo $row->idperalatan; ?>&menu=peralatan">Edit</a>
                 |
                 <a href="padam.php?idperalatan=<?php echo $row->idperalatan; ?>"
                    onclick="return sahkan()">Padam</a>
@@ -138,7 +146,6 @@ if (!isset($_GET['edit'])) {
         <?php
     }
     ?>
-
 </table>
 <script>
     function sahkan() {

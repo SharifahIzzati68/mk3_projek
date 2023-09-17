@@ -1,5 +1,6 @@
 <?php
-global $conn;
+/** @var object $conn */
+$conn;
 session_start();
 require 'include/conn.php';
 # baca data dari form yang user isi

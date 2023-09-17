@@ -1,14 +1,15 @@
 <?php
-global $conn;
 require '../include/conn.php';
-if (!isset($_SESSION['idpelajar'])) header('location: ../');
+if (!isset($_SESSION['idpelajar'])) {
+    header('location: ../');
+    exit;
+}
 $idpelajar = $_SESSION['idpelajar'];
-$sql = "SELECT namapelajar,nokppelajar FROM pelajar WHERE idpelajar = $idpelajar";
+$sql = "SELECT namapelajar, nokppelajar FROM pelajar WHERE idpelajar = $idpelajar";
 $row = $conn->query($sql)->fetch_object();
 $namapelajar = $row->namapelajar;
 $nokppelajar = $row->nokppelajar;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@ $nokppelajar = $row->nokppelajar;
 </head>
 <body>
 <h1><?php echo "Selamat Datang $namapelajar"; ?></h1>
-<p><a href="../logout.php">LOGOUT</a></p>
+
 <table>
     <tr>
         <th>Sistem Pelajar</th>
@@ -29,15 +30,17 @@ $nokppelajar = $row->nokppelajar;
             <a href="index.php?menu=peralatan">Senarai Peralatan</a>
             ::
             <a href="index.php?menu=profile">Profile</a>
+            ::
+            <a href="../logout.php">Logout</a>
         </td>
     </tr>
 </table>
 <?php
-$menu = 'home'; # default value
+$menu = 'home'; // Default value
 if (isset($_GET['menu'])) {
     $menu = $_GET['menu'];
 }
 include "$menu.php";
 ?>
 </body>
-    </html>
+</html>
