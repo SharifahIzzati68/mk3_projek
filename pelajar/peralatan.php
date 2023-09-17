@@ -1,10 +1,5 @@
 <?php
 require_once '../include/conn.php';
-
-if (!isset($_SESSION)) {
-    session_start();
-}
-
 if (!isset($_SESSION['idpelajar'])) {
     header('location: ../');
     exit;

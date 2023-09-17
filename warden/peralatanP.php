@@ -1,7 +1,6 @@
 <?php
-require '../include/conn.php';
-if (!isset($_SESSION['idwarden'])) header('location: ../');
-$idwarden = $_SESSION['idwarden'];
+/** @var object $conn */
+/** @var string $idwarden */
 $sql = "SELECT namawarden FROM warden WHERE idwarden = $idwarden";
 $row = $conn->query($sql)->fetch_object();
 $namawarden = $row->namawarden;
@@ -17,6 +16,7 @@ $namawarden = $row->namawarden;
     <title>Warden</title>
 </head>
 <body>
+<h2>Senarai Peralatan</h2>
     <!-- Display the equipment results here -->
     <table>
         <tr>

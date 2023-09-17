@@ -1,5 +1,5 @@
 <?php
-
+/** @var object $conn */
 require '../include/conn.php';
 $namawarden = $_POST['namawarden'];
 $nokpwarden = $_POST['nokpwarden'];

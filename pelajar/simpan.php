@@ -1,6 +1,6 @@
 <?php
 require '../include/conn.php';
-
+/** @var object $conn */
 // Validate and sanitize user input
 $jenisperalatan =  $_POST['jenisperalatan'];
 $nosiri =  $_POST['nosiri'];

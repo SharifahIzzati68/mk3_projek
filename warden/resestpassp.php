@@ -1,4 +1,5 @@
 <?php
+/** @var object $conn*/
 require '../include/conn.php';
 $idpelajar = $_GET['idpelajar'];
 $nokppelajar= $_GET['nokppelajar'];

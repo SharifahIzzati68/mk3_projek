@@ -1,12 +1,6 @@
 <?php
-require '../include/conn.php';
-if (!isset($_SESSION['idadmin'])) {
-    header('location: ../');
-    exit;
-}
-
-$idadmin = $_SESSION['idadmin'];
-
+/** @var object $conn */
+/** @var string $idadmin */
 if (isset($_POST['idadmin'])) {
     $idadmin = $_POST['idadmin'];
     $current_password = $_POST['current_password'];
@@ -71,7 +65,7 @@ $idadmin = $row->idadmin;
     <title>Admin</title>
 </head>
 <body>
-<form action="index.php?menu=profile" method="post">
+<form action="index.php?menu=kata" method="post">
     <input type="hidden" name="idadmin" value="<?php echo $row->idadmin; ?>">
     <fieldset>
         <legend><h1>Change password</h1></legend>

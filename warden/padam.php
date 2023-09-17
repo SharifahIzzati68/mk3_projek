@@ -1,5 +1,5 @@
 <?php
-
+/** @var object $conn */
 require '../include/conn.php';
 $idpelajar = $_GET['idpelajar'];
 $sql = "DELETE FROM pelajar WHERE idpelajar = $idpelajar";

@@ -1,10 +1,9 @@
 <?php
 require '../include/conn.php';
-if (!isset($_SESSION['idpelajar'])) {
-    header('location: ../');
-    exit;
-}
+/** @var object $conn */
+if (!isset($_SESSION['idpelajar'])) header('location: ../');
 $idpelajar = $_SESSION['idpelajar'];
+
 $sql = "SELECT namapelajar, nokppelajar FROM pelajar WHERE idpelajar = $idpelajar";
 $row = $conn->query($sql)->fetch_object();
 $namapelajar = $row->namapelajar;

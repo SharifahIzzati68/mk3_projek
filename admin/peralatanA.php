@@ -1,12 +1,6 @@
 <?php
-require '../include/conn.php';
-
-if (!isset($_SESSION['idadmin'])) {
-    header('location: ../');
-    exit; // Ensure script execution stops after redirection
-}
-
-$idadmin = $_SESSION['idadmin'];
+/** @var object $conn */
+/** @var string $idadmin */
 $sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
 $row = $conn->query($sql)->fetch_object();
 $namapelajar = $row->idadmin;

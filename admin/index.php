@@ -1,9 +1,6 @@
 <?php
 require '../include/conn.php';
-if (!isset($_SESSION['idadmin'])) {
-    header('location: ../');
-    exit;
-}
+if (!isset($_SESSION['idadmin'])) header('location: ../');
 $idadmin = $_SESSION['idadmin'];
 $sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
 $row = $conn->query($sql)->fetch_object();

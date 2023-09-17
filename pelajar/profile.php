@@ -1,12 +1,14 @@
 <?php
-require '../include/conn.php';
+// Fetch the user's current profile information
+$sql = "SELECT pelajar.namapelajar, pelajar.nokppelajar, warden.namawarden
+        FROM pelajar
+        INNER JOIN warden ON pelajar.warden = warden.idwarden
+        WHERE pelajar.idpelajar = '$idpelajar'";
+$row = $conn->query($sql)->fetch_object();
 
-if (!isset($_SESSION['idpelajar'])) {
-    header('location: ../');
-    exit;
-}
-
-$idpelajar = $_SESSION['idpelajar'];
+$namapelajar = $row->namapelajar;
+$nokppelajar = $row->nokppelajar;
+$namawarden = $row->namawarden;
 
 // Check if the password reset form has been submitted
 if (isset($_POST['reset_password'])) {
@@ -66,30 +68,6 @@ if (isset($_POST['update_profile'])) {
         echo "Error updating profile: " . $conn->error;
     }
 }
-
-// Fetch the user's current profile information
-$sql = "SELECT pelajar.namapelajar, pelajar.nokppelajar, warden.namawarden
-        FROM pelajar
-        INNER JOIN warden ON pelajar.warden = warden.idwarden
-        WHERE pelajar.idpelajar = '$idpelajar'";
-
-$result = $conn->query($sql);
-
-if (!$result) {
-    echo "Error: " . $conn->error;
-    exit;
-}
-
-$row = $result->fetch_object();
-
-if (!$row) {
-    echo "No data found for this student.";
-    exit;
-}
-
-$namapelajar = $row->namapelajar;
-$nokppelajar = $row->nokppelajar;
-$namawarden = $row->namawarden;
 ?>
 
 <!doctype html>
