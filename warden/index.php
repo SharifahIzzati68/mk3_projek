@@ -22,7 +22,7 @@ $namawarden = $row->namawarden;
 <p></p>
 <table>
     <tr>
-        <td>System</td>
+        <th>System Warden</th>
         <td>
             <a href="index.php?menu=Student">Student List</a>
             ::

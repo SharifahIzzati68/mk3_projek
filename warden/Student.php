@@ -26,7 +26,7 @@ $namawarden = $row->namawarden;
     <link rel="stylesheet" href="../include/spel.css">
 </head>
 <body>
-<h2>Student List</h2>
+
 <?php
 if (isset($error_message)) {
     echo '<p class="error">' . $error_message . '</p>';
@@ -100,7 +100,7 @@ if (!isset($_GET['edit'])) {
     <?php
 }
 ?>
-
+<h2>Student List</h2>
 <table class="table3">
     <tr class="tr3">
         <th class="tr3">Bil</th>
