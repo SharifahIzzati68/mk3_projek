@@ -76,7 +76,7 @@ if (!isset($_GET['edit'])) {
     <form action="kemaskini.php?menu=Student" method="post">
         <input type="hidden" name="idpelajar" value="<?php echo $row->idpelajar; ?>">
         <fieldset>
-            <legend>Kemaskini Data Pelajar</legend>
+            <legend><h2>Kemaskini Data Pelajar</h2></legend>
             <table>
                 <tr>
                     <td>Nama Pelajar</td>

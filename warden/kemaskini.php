@@ -1,5 +1,4 @@
 <?php
-
 require '../include/conn.php';
 /** @var object $conn */
 $idpelajar = $_POST['idpelajar'];

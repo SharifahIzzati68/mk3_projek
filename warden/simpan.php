@@ -26,7 +26,7 @@ if (!$check_result) {
 $row = $check_result->fetch_assoc();
 
 if ($row['count'] > 0) {
-    // Redirect back to the warden registration page with an error message
+    // Redirect back to the pelajar registration page with an error message
     header('location: index.php?menu=Student&error=exists');
     exit;
 }
