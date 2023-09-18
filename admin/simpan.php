@@ -13,6 +13,24 @@ if ($row['count'] > 0) {
     header('location: index.php?menu=warden&error=exists');
     exit;
 }
+// Check if the provided 'nokppelajar' is not a warden's 'No.KP warden'
+$pelajar_check_sql = "SELECT COUNT(*) AS count FROM pelajar WHERE nokppelajar = '$nokpwarden'";
+$pelajar_check_result = $conn->query($pelajar_check_sql);
+
+if (!$pelajar_check_result) {
+    // Handle the query error
+    echo "Error: " . $conn->error;
+    $conn->close();
+    exit;
+}
+
+$pelajar_row = $pelajar_check_result->fetch_assoc();
+
+if ($pelajar_row['count'] > 0) {
+    // Redirect back to the warden registration page with an error message
+    header('location: index.php?menu=warden&error=pelajar');
+    exit;
+}
 
 // Continue with the insertion if nokpwarden is unique
 $kata = password_hash($nokpwarden, PASSWORD_BCRYPT);

@@ -5,6 +5,9 @@
 // Check for error messages from simpan.php
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
+    if ($error === 'warden') {
+        $error_message =  "The provided NRIC belongs to a warden.";
+    }
     if ($error === 'exists') {
         $error_message =  "The Student's Identification Number already exists in the database.";
     } elseif ($error === 'invalid') {
@@ -63,6 +66,9 @@ if (!isset($_GET['edit'])) {
     </form>
     <?php
 } else {
+    if (isset($error_message)) {
+        echo '<p class="error">' . $error_message . '</p>';
+    }
     $idpelajar = $_GET['edit'];
     $sql = "SELECT * FROM pelajar WHERE idpelajar = $idpelajar";
     $row = $conn->query($sql)->fetch_object();
