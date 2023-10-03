@@ -1,6 +1,8 @@
 <?php
-/** @var string $idwarden */
-/** @var object $conn */
+/**
+ * @var string $idwarden
+ * @var object $conn
+ */
 // Check if the password reset form has been submitted
 if (isset($_POST['reset_password'])) {
     // Get the new password and confirm password from the form
