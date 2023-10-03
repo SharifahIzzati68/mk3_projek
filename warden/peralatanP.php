@@ -21,7 +21,7 @@ $namawarden = $row->namawarden;
 <body>
 <h2>Senarai Peralatan</h2>
     <!-- Display the equipment results here -->
-    <table>
+    <table class="table3">
         <tr>
             <th class="tr3">Bil</th>
             <th class="tr3">Nama Pelajar</th>
