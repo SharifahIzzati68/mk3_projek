@@ -23,12 +23,12 @@ $namawarden = $row->namawarden;
     <!-- Display the equipment results here -->
     <table class="table3">
         <tr>
-            <th class="tr3">Bil</th>
-            <th class="tr3">Nama Pelajar</th>
-            <th class="tr3">No KP Pelajar</th>
-            <th class="tr3">No. Siri Peralatan</th>
-            <th class="tr3">Jenis Peralatan</th>
-            <th class="tr3">Jenama Peralatan</th>
+            <th class="tr4">Bil</th>
+            <th class="tr4">Nama Pelajar</th>
+            <th class="tr4">No KP Pelajar</th>
+            <th class="tr4">No. Siri Peralatan</th>
+            <th class="tr4">Jenis Peralatan</th>
+            <th class="tr4">Jenama Peralatan</th>
         </tr>
         <?php
         $bil = 1;

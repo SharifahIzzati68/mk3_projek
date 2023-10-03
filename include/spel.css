@@ -12,6 +12,9 @@
     border: 2px solid black;
     padding : 5px 30px;
 }
+.th{
+    text-align: left;
+}
 
 .tr4{
     background-color: rgba(165, 165, 165, 0.7);
@@ -21,4 +24,16 @@
 }
 .table3{
     border-collapse: collapse;
+}
+
+.tableprofile1{
+    padding:10px 30px;
+}
+
+.tableprofile{
+    padding: 5px 15px;
+}
+
+.newpas{
+    text-align: left;
 }

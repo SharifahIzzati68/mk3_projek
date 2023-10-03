@@ -89,14 +89,14 @@ $kata = $row->kata;
 </head>
 <body>
 <h1>Profile</h1>
-<table>
-    <tr>
+<table class="table3">
+    <tr class="tr3">
         <th class="tableprofile">Nama warden</th>
-        <td class="tableprofile"><?php echo $namawarden; ?></td>
+        <td class="tableprofile1"><?php echo $namawarden; ?></td>
     </tr>
-    <tr>
+    <tr class="tr3">
         <th class="tableprofile">No KP warden</th>
-        <td class="tableprofile"><?php echo $nokpwarden; ?></td>
+        <td class="tableprofile1"><?php echo $nokpwarden; ?></td>
     </tr>
 </table>
 
@@ -108,7 +108,7 @@ $kata = $row->kata;
         </legend>
         <table>
             <tr>
-                <th>
+                <th class="th">
                     <label for="new_namawarden">New Name:</label>
                 </th>
                 <td>
@@ -153,7 +153,7 @@ $kata = $row->kata;
                 </td>
             </tr>
             <tr>
-                <th>
+                <th class="th">
                     <label for="new_password">New Password:</label>
                 </th>
                 <td>

@@ -43,14 +43,14 @@ if (!isset($_GET['edit'])) {
             <legend><h2>Daftar Pelajar</h2></legend>
             <table>
                 <tr>
-                    <td>Nama Pelajar</td>
+                    <th>Nama Pelajar </th>
                     <td><label>
                             <input type="text" name="namapelajar" required>
                         </label>
                     </td>
                 </tr>
                 <tr>
-                    <td>NRIC</td>
+                    <th class="th">NRIC </th>
                     <td>
                         <label>
                             <input type="text" name="nokppelajar" required minlength="12" maxlength="12">
@@ -81,14 +81,14 @@ if (!isset($_GET['edit'])) {
             <legend><h2>Kemaskini Data Pelajar</h2></legend>
             <table>
                 <tr>
-                    <td>Nama Pelajar</td>
+                    <th>Nama Pelajar</th>
                     <td>
                         <label>
                             <input type="text" name="namapelajar" required value="<?php echo $row->namapelajar; ?>">
                         </label></td>
                 </tr>
                 <tr>
-                    <td>NRIC</td>
+                    <th class="th">NRIC</th>
                     <td>
                         <label>
                             <input type="text" name="nokppelajar" required value="<?php echo $row->nokppelajar; ?>" minlength="12" maxlength="12">
