@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var object $conn
+ * @var string $idpelajar
+ */
 // Fetch the user's current profile information
 $sql = "SELECT pelajar.namapelajar, pelajar.nokppelajar, warden.namawarden
         FROM pelajar

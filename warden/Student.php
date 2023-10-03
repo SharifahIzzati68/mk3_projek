@@ -1,6 +1,8 @@
 <?php
-/** @var object $conn */
-/** @var string $idwarden */
+/**
+ * @var object $conn
+ * @var string $idwarden
+ */
 
 // Check for error messages from simpan.php
 if (isset($_GET['error'])) {

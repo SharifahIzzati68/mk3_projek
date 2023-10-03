@@ -1,5 +1,7 @@
 <?php
-/** @var object $conn */
+/**
+ * @var object $conn
+ */
 require '../include/conn.php';
 // Validate and sanitize user input
 $jenisperalatan =  $_POST['jenisperalatan'];

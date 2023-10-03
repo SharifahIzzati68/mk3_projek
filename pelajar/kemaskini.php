@@ -1,6 +1,8 @@
 <?php
 require '../include/conn.php';
-/** @var object $conn */
+/**
+ * @var object $conn
+ */
 $idperalatan = $_POST['idperalatan'];
 $jenisperalatan = $_POST['jenisperalatan'];
 $nosiri = $_POST['nosiri'];

@@ -1,6 +1,8 @@
 <?php
 require '../include/conn.php';
-/** @var object $conn */
+/**
+ * @var object $conn
+ */
 $idperalatan = $_GET['idperalatan'];
 $sql = "DELETE FROM peralatan WHERE idperalatan = $idperalatan";
 $conn->query($sql);

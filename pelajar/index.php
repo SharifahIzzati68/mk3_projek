@@ -1,6 +1,8 @@
 <?php
 require '../include/conn.php';
-/** @var object $conn */
+/**
+ * @var object $conn
+ */
 if (!isset($_SESSION['idpelajar'])) header('location: ../');
 $idpelajar = $_SESSION['idpelajar'];
 

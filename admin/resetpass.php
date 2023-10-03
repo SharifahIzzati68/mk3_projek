@@ -1,5 +1,7 @@
 <?php
-/** @var object $conn */
+/**
+ * @var object $conn
+ */
 require '../include/conn.php';
 $idwarden = $_GET['idwarden'];
 $nokpwarden= $_GET['nokpwarden'];

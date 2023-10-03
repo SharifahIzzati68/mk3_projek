@@ -1,6 +1,8 @@
 <?php
-/** @var object $conn */
-/** @var string $idadmin */
+/**
+ * @var object $conn
+ * @var string $idadmin
+ */
 $sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
 $row = $conn->query($sql)->fetch_object();
 $namapelajar = $row->idadmin;
