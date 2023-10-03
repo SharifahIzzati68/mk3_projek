@@ -126,7 +126,7 @@ $kata = $row->kata;
                     </label></td>
             </tr>
             <tr>
-                <td>
+                <td class="but2"  colspan="2">
                     <button type="submit">Update Profile</button>
                 </td>
             </tr>
@@ -173,7 +173,7 @@ $kata = $row->kata;
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="but3" colspan="2">
                     <button type="submit">Change Password</button>
                 </td>
             </tr>

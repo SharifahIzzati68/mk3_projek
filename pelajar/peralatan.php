@@ -42,14 +42,14 @@ if (!isset($_GET['edit'])) {
             <legend><h1>Peralatan</h1></legend>
             <table>
                 <tr>
-                    <td>Jenis Peralatan</td>
+                    <th>Jenis Peralatan</th>
                     <td><label>
                             <input type="text" name="jenisperalatan" required>
                         </label>
                     </td>
                 </tr>
                 <tr>
-                    <td>No Siri</td>
+                    <th class="th">No Siri</th>
                     <td>
                         <label>
                             <input type="text" name="nosiri">
@@ -57,7 +57,7 @@ if (!isset($_GET['edit'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td>Jenama</td>
+                    <th class="th">Jenama</th>
                     <td>
                         <label>
                             <input type="text" name="jenama">
@@ -65,7 +65,7 @@ if (!isset($_GET['edit'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td class="but" colspan="2">
                         <button type="submit">SIMPAN</button>
                         <button type="reset">BATAL</button>
                     </td>
@@ -123,13 +123,13 @@ if (!isset($_GET['edit'])) {
 ?>
 <br>
 <h2>Senarai Peralatan</h2>
-<table>
-    <tr>
-        <th class="tableprofile">Bil</th>
-        <th class="tableprofile">Jenis Peralatan</th>
-        <th class="tableprofile">No siri</th>
-        <th class="tableprofile">Jenama</th>
-        <th class="tableprofile">Tindakan</th>
+<table class="table3">
+    <tr class="tr3">
+        <th class="tr4">Bil</th>
+        <th class="tr4">Jenis Peralatan</th>
+        <th class="tr4">No siri</th>
+        <th class="tr4">Jenama</th>
+        <th class="tr4">Tindakan</th>
     </tr>
     <?php
     $bil = 1;
@@ -137,7 +137,7 @@ if (!isset($_GET['edit'])) {
     $result = $conn->query($sql);
     while ($row = $result->fetch_object()) {
         ?>
-        <tr>
+        <tr class="tr">
             <td class="tableprofile"><?php echo $bil++; ?></td>
             <td class="tableprofile"><?php echo $row->jenisperalatan; ?></td>
             <td class="tableprofile"><?php echo $row->nosiri; ?></td>

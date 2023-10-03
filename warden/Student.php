@@ -58,7 +58,7 @@ if (!isset($_GET['edit'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td class="but1" colspan="2">
                         <button type="submit">SIMPAN</button>
                         <button type="reset">BATAL</button>
                     </td>
@@ -96,8 +96,8 @@ if (!isset($_GET['edit'])) {
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <button type="submit">SIMPAN</button>
+                    <td class="but1" colspan="2">
+                        <button  type="submit">SIMPAN</button>
                         <button type="reset">BATAL</button>
                     </td>
                 </tr>

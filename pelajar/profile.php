@@ -86,16 +86,16 @@ if (isset($_POST['update_profile'])) {
 </head>
 <body>
 <h1>Profile</h1>
-<table>
-    <tr>
+<table class="table3">
+    <tr class="tr3">
         <th class="tableprofile">Nama Pelajar</th>
         <td class="tableprofile"><?php echo $namapelajar; ?></td>
     </tr>
-    <tr>
+    <tr class="tr3">
         <th class="tableprofile">No KP Pelajar</th>
         <td class="tableprofile"><?php echo $nokppelajar; ?></td>
     </tr>
-    <tr>
+    <tr class="tr3">
         <th class="tableprofile">Nama Warden</th>
         <td class="tableprofile"><?php echo $namawarden; ?></td>
     </tr>
@@ -107,7 +107,7 @@ if (isset($_POST['update_profile'])) {
         <legend><h2>Edit Profile</h2></legend>
         <table>
             <tr>
-                <th>
+                <th class="th">
                     <label for="new_namapelajar">New Name:</label>
                 </th>
                 <td>
@@ -128,10 +128,8 @@ if (isset($_POST['update_profile'])) {
                 </td>
             </tr>
             <tr>
-                <td>
-                    <button type="submit">
-                        Update
-                    </button>
+                <td class="but4" colspan="2">
+                    <button type="submit">Update</button>
                 </td>
             </tr>
         </table>
@@ -149,7 +147,7 @@ if (isset($_POST['update_profile'])) {
         </legend>
         <table>
             <tr>
-                <th>
+                <th class="th">
                     <label for="current_password">
                         Current Password:
                     </label>
@@ -161,7 +159,7 @@ if (isset($_POST['update_profile'])) {
                 </td>
             </tr>
             <tr>
-                <th>
+                <th class="th">
                     <label for="new_password">
                         New Password:
                     </label>
@@ -185,10 +183,8 @@ if (isset($_POST['update_profile'])) {
                 </td>
             </tr>
             <tr>
-                <td>
-                    <button type="submit">
-                        Change Password
-                    </button>
+                <td class="but5" colspan="2">
+                    <button type="submit">Change Password</button>
                 </td>
             </tr>
         </table>

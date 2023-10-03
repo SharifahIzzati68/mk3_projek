@@ -12,6 +12,10 @@
     border: 2px solid black;
     padding : 5px 30px;
 }
+
+.tr{
+    text-align: center;
+}
 .th{
     text-align: left;
 }
@@ -36,4 +40,33 @@
 
 .newpas{
     text-align: left;
+}
+
+.but{
+    padding-left: 130px;
+    padding-top: 10px;
+}
+
+.but1{
+    padding-left: 120px;
+    padding-top: 10px;
+}
+.but2{
+    padding-left: 150px;
+    padding-top: 10px;
+}
+
+.but3{
+    padding-left: 160px;
+    padding-top: 10px;
+}
+
+.but4{
+    padding-left: 175px;
+    padding-top: 10px;
+}
+
+.but5{
+    padding-left: 195px;
+    padding-top: 10px;
 }
