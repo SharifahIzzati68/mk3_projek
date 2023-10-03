@@ -111,10 +111,10 @@ if (!isset($_GET['edit'])) {
 <h2>Student List</h2>
 <table class="table3">
     <tr class="tr3">
-        <th class="tr3">Bil</th>
-        <th class="tr3">Student Name</th>
-        <th class="tr3">NRIC</th>
-        <th class="tr3">Action</th>
+        <th class="tr4">Bil</th>
+        <th class="tr4">Student Name</th>
+        <th class="tr4">NRIC</th>
+        <th class="tr4">Action</th>
 
     </tr>
     <?php

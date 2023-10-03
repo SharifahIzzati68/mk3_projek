@@ -10,6 +10,15 @@
 }
 .tr3,.tableprofile, .tableadmin{
     border: 2px solid black;
+    padding : 5px 30px;
+}
+
+.tr4{
+    background-color: rgba(165, 165, 165, 0.7);
+    border: 2px solid black;
     padding-left: 30px;
     padding-right: 30px;
+}
+.table3{
+    border-collapse: collapse;
 }
