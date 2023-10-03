@@ -1,6 +1,8 @@
 <?php
-/** @var object $conn */
-$conn;
+/**
+ * @var object $conn
+ */
+
 require 'include/conn.php';
 # baca data dari form yang user isi
 $idpengguna = $_POST['idpengguna'];

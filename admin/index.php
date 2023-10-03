@@ -1,5 +1,8 @@
 <?php
 require '../include/conn.php';
+/**
+ * @var object $conn
+ */
 if (!isset($_SESSION['idadmin'])) header('location: ../');
 $idadmin = $_SESSION['idadmin'];
 $sql = "SELECT * FROM admin WHERE idadmin = $idadmin";
