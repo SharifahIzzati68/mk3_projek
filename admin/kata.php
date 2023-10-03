@@ -1,6 +1,9 @@
 <?php
-/** @var object $conn */
-/** @var string $idadmin */
+/**
+ * @var object $conn
+ * @var string $idadmin
+ */
+
 if (isset($_POST['idadmin'])) {
     $idadmin = $_POST['idadmin'];
     $current_password = $_POST['current_password'];
