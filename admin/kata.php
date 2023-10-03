@@ -74,13 +74,13 @@ $idadmin = $row->idadmin;
         <legend><h1>Change password</h1></legend>
         <table>
             <tr>
-                <th>Current Password</th>
+                <th class="th">Current Password</th>
                 <td><label>
                         <input type="password" name="current_password" required>
                     </label></td>
             </tr>
             <tr>
-                <th>New Password</th>
+                <th class="th">New Password</th>
                 <td><label>
                         <input type="password" name="new_password" required>
                     </label></td>
@@ -92,7 +92,7 @@ $idadmin = $row->idadmin;
                     </label></td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td class="but6" colspan="2">
                     <button type="submit">SIMPAN</button>
                 </td>
             </tr>

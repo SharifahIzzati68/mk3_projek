@@ -54,7 +54,7 @@ $namapelajar = $row->idadmin;
                         <td><input type="text" name="nokpwarden" required maxlength="12" minlength="12"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td class="but" colspan="2">
                             <button type="submit">SIMPAN</button>
                             <button type="reset">BATAL</button>
                         </td>
@@ -89,7 +89,7 @@ $namapelajar = $row->idadmin;
                                    maxlength="12"></td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td class="but" colspan="2">
                             <button type="submit">SIMPAN</button>
                             <button type="reset">BATAL</button>
                         </td>
@@ -99,7 +99,6 @@ $namapelajar = $row->idadmin;
             </fieldset>
         </form>
         <br>
-        <a href="index.php?menu=home">Kembali ke Senarai Warden</a>
         <?php
     }
     ?>
@@ -107,12 +106,12 @@ $namapelajar = $row->idadmin;
     <br>
     <h2>Senarai Warden</h2>
 
-    <table>
-        <tr>
-            <th class="tableadmin">Bil</th>
-            <th class="tableadmin">Nama Warden</th>
-            <th class="tableadmin">No. KP Warden</th>
-            <th class="tableadmin">Tindakan</th>
+    <table class="table3">
+        <tr class="tr3">
+            <th class="tr4">Bil</th>
+            <th class="tr4">Nama Warden</th>
+            <th class="tr4">No. KP Warden</th>
+            <th class="tr4">Tindakan</th>
         </tr>
         <?php
         $bil = 1;
@@ -120,7 +119,7 @@ $namapelajar = $row->idadmin;
         $result = $conn->query($sql);
         while ($row = $result->fetch_object()) {
             ?>
-            <tr>
+            <tr class="tr3">
                 <td class="tableadmin"><?php echo $bil++; ?></td>
                 <td class="tableadmin"><?php echo $row->namawarden; ?></td>
                 <td class="tableadmin"><?php echo $row->nokpwarden; ?></td>
