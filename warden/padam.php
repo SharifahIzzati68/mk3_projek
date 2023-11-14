@@ -3,14 +3,26 @@
  * @var object $conn
  */
 require '../include/conn.php';
+
 $idpelajar = $_GET['idpelajar'];
-$sql = "DELETE FROM pelajar WHERE idpelajar = $idpelajar";
-$conn->query($sql);
-if ($conn->query($sql)) {
-    // Deletion successful, redirect back to student list page
-    header('location: index.php?menu=Student');
-    exit;
+
+// Check if the student has any associated equipment
+$sql_check = "SELECT * FROM peralatan WHERE pelajar = $idpelajar";
+$result = $conn->query($sql_check);
+
+if ($result->num_rows > 0) {
+    // If there are associated equipment records, prevent deletion
+    echo "Cannot delete student. Equipment records exist.";
 } else {
-    // Error handling: Display an error message or log the error
-    echo "Error deleting student: " . $conn->error;
+    // No associated equipment, proceed with deletion
+    $sql_delete = "DELETE FROM pelajar WHERE idpelajar = $idpelajar";
+    if ($conn->query($sql_delete)) {
+        // Deletion successful, redirect back to student list page
+        header('location: index.php?menu=Student');
+        exit;
+    } else {
+        // Error handling: Display an error message or log the error
+        echo "Error deleting student: " . $conn->error;
+    }
 }
+?>

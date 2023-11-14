@@ -124,7 +124,7 @@ $namapelajar = $row->idadmin;
                 <td class="tableadmin"><?php echo $row->namawarden; ?></td>
                 <td class="tableadmin"><?php echo $row->nokpwarden; ?></td>
                 <td class="tableadmin">
-                    <a href="resetpass.php?nokpwarden=<?php echo $row->nokpwarden; ?>&idwarden=<?php echo $row->idwarden; ?>">Reset
+                    <a href="resetpassWarden.php?nokpwarden=<?php echo $row->nokpwarden; ?>&idwarden=<?php echo $row->idwarden; ?>">Reset
                         Kata Laluan</a>
                     |
                     <a href="index.php?edit=<?php echo $row->idwarden; ?>&menu=warden">Edit</a>
