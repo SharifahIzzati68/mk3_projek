@@ -28,7 +28,7 @@ $nokppelajar = $row->nokppelajar;
         <td>
             <a href="index.php?menu=home">Home</a>
             ::
-            <a href="index.php?menu=peralatan">Senarai Peralatan</a>
+            <a href="index.php?menu=peralatanPelajar">Senarai Peralatan</a>
             ::
             <a href="index.php?menu=profilePelajar">Profile</a>
             ::
