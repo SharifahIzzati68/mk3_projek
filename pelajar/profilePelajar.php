@@ -101,7 +101,7 @@ if (isset($_POST['update_profile'])) {
     </tr>
 </table>
 
-<form action="index.php?menu=profile" method="post">
+<form action="index.php?menu=profilePelajar" method="post">
     <input type="hidden" name="update_profile" value="1">
     <fieldset>
         <legend><h2>Edit Profile</h2></legend>
@@ -137,7 +137,7 @@ if (isset($_POST['update_profile'])) {
     </fieldset>
 </form>
 
-<form action="index.php?menu=profile" method="post">
+<form action="index.php?menu=profilePelajar" method="post">
     <input type="hidden" name="reset_password" value="1">
     <fieldset>
         <legend>
