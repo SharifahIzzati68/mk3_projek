@@ -29,7 +29,7 @@ $idadmin = $row->idadmin;
             ::
             <a href="index.php?menu=peralatanA">Carian Peralatan</a>
             ::
-            <a href="index.php?menu=kata">Tukar Kata Laluan</a>
+            <a href="index.php?menu=kata_warden">Tukar Kata Laluan</a>
             ::
             <a href="../logout.php">Logout</a>
         </td>
