@@ -4,7 +4,7 @@
  *@var string $idadmin
  */
 
-// Check for error messages from simpan.php
+// Check for error messages from simpan_warden.php
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === 'pelajar') {
@@ -41,7 +41,7 @@ $namapelajar = $row->idadmin;
 
     if (!isset($_GET['edit'])) {
         ?>
-        <form action="simpan.php" method="post">
+        <form action="simpan_warden.php" method="post">
             <fieldset>
                 <legend><h1>Daftar Warden Baru</h1></legend>
                 <table>
@@ -72,7 +72,7 @@ $namapelajar = $row->idadmin;
         $sql = "SELECT * FROM warden WHERE idwarden = $idwarden";
         $row = $conn->query($sql)->fetch_object();
         ?>
-        <form action="kemaskini.php" method="post">
+        <form action="kemaskini_warden.php" method="post">
             <input type="hidden" name="idwarden" value="<?php echo $row->idwarden; ?>">
             <fieldset>
                 <legend><h1>Kemaskini Data Warden</h1></legend>
@@ -129,7 +129,7 @@ $namapelajar = $row->idadmin;
                     |
                     <a href="index.php?edit=<?php echo $row->idwarden; ?>&menu=warden">Edit</a>
                     |
-                    <a href="padam.php?idwarden=<?php echo $row->idwarden; ?>"
+                    <a href="padam_warden.php?idwarden=<?php echo $row->idwarden; ?>"
                        onclick="return sahkan()">Padam</a>
                 </td>
             </tr>

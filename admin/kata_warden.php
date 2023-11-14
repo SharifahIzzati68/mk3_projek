@@ -68,7 +68,7 @@ $idadmin = $row->idadmin;
     <title>Admin</title>
 </head>
 <body>
-<form action="index.php?menu=kata" method="post">
+<form action="index.php?menu=kata_warden" method="post">
     <input type="hidden" name="idadmin" value="<?php echo $row->idadmin; ?>">
     <fieldset>
         <legend><h1>Change password</h1></legend>
