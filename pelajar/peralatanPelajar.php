@@ -8,9 +8,9 @@
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === 'exists') {
-        $error_message = "Equipment with this serial number already exists for you.";
+        $error_message = "No siri peralatan ini telahpun wujud.";
     } elseif ($error === 'invalid') {
-        $error_message = "Invalid input. Please fill in all fields correctly.";
+        $error_message = "Input tidak dapat disahkan.Mohon isi semua ruang yang disediakan dengan betul.";
     }
 }
 
