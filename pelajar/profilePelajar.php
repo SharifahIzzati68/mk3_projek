@@ -43,15 +43,15 @@ if (isset($_POST['reset_password'])) {
                 // Update the user's password in the database
                 $update_sql = "UPDATE pelajar SET kata = '$hashed_password' WHERE idpelajar = '$idpelajar'";
                 if ($conn->query($update_sql)) {
-                    echo "Password updated successfully!";
+                    echo "Katalaluan berjaya dikemaskinikan!";
                 } else {
                     echo "Error updating password: " . $conn->error;
                 }
             } else {
-                echo "New password and confirm new password do not match.";
+                echo "Katalaluan baru dan katalaluan tetap tidak sepadan.";
             }
         } else {
-            echo "Current password is incorrect.";
+            echo "Katalaluan tetap tidak sama.";
         }
     } else {
         echo "Error fetching current password: " . $conn->error;
@@ -67,7 +67,7 @@ if (isset($_POST['update_profile'])) {
     // Update the user's profile information in the database
     $update_sql = "UPDATE pelajar SET namapelajar = '$new_namapelajar', nokppelajar = '$new_nokppelajar' WHERE idpelajar = '$idpelajar'";
     if ($conn->query($update_sql)) {
-        echo "Profile updated successfully!";
+        echo "Profil berjaya dikemaskinikan!";
     } else {
         echo "Error updating profile: " . $conn->error;
     }
@@ -85,7 +85,7 @@ if (isset($_POST['update_profile'])) {
     <title>Profile</title>
 </head>
 <body>
-<h1>Profile</h1>
+<h1>Profil</h1>
 <table class="table3">
     <tr class="tr3">
         <th class="tableprofile">Nama Pelajar</th>
@@ -104,11 +104,11 @@ if (isset($_POST['update_profile'])) {
 <form action="index.php?menu=profilePelajar" method="post">
     <input type="hidden" name="update_profile" value="1">
     <fieldset>
-        <legend><h2>Edit Profile</h2></legend>
+        <legend><h2>Kemaskini Profil</h2></legend>
         <table>
             <tr>
                 <th class="th">
-                    <label for="new_namapelajar">New Name:</label>
+                    <label for="new_namapelajar">Nama Baru:</label>
                 </th>
                 <td>
                     <label>
@@ -119,7 +119,7 @@ if (isset($_POST['update_profile'])) {
 
             <tr>
                 <th>
-                    <label for="new_nokppelajar">New IC Number:</label>
+                    <label for="new_nokppelajar">IC Nombor Baru:</label>
                 </th>
                 <td>
                     <label>
@@ -129,7 +129,7 @@ if (isset($_POST['update_profile'])) {
             </tr>
             <tr>
                 <td class="but4" colspan="2">
-                    <button type="submit">Update</button>
+                    <button type="submit">Kemaskini</button>
                 </td>
             </tr>
         </table>
@@ -142,14 +142,14 @@ if (isset($_POST['update_profile'])) {
     <fieldset>
         <legend>
             <h2>
-                Change Password
+                Tukar KataLaluan
             </h2>
         </legend>
         <table>
             <tr>
                 <th class="th">
                     <label for="current_password">
-                        Current Password:
+                        KataLaluan Tetap:
                     </label>
                 </th>
                 <td>
@@ -161,7 +161,7 @@ if (isset($_POST['update_profile'])) {
             <tr>
                 <th class="th">
                     <label for="new_password">
-                        New Password:
+                        KataLaluan Baru:
                     </label>
                 </th>
                 <td>
@@ -173,7 +173,7 @@ if (isset($_POST['update_profile'])) {
             <tr>
                 <th>
                     <label for="confirm_new_password">
-                        Confirm New Password:
+                        Sahkan Kata Laluan Baru:
                     </label>
                 </th>
                 <td>
@@ -184,7 +184,7 @@ if (isset($_POST['update_profile'])) {
             </tr>
             <tr>
                 <td class="but5" colspan="2">
-                    <button type="submit">Change Password</button>
+                    <button type="submit">Tukar Katalaluan</button>
                 </td>
             </tr>
         </table>
