@@ -12,5 +12,5 @@ $sql = "UPDATE peralatan
  SET jenisperalatan = '$jenisperalatan', nosiri = '$nosiri', jenama = '$jenama'
  WHERE idperalatan = $idperalatan";
 $conn->query($sql);
-header('location: index.php?menu=peralatan');
+header('location: index.php?menu=peralatanPelajar');
 

@@ -36,7 +36,7 @@ $result = $conn->query($sql);
 
 if ($result)
 {
-    header('Location: index.php?menu=peralatan');
+    header('Location: index.php?menu=peralatanPelajar');
 }
 
 else
