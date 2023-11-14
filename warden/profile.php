@@ -26,18 +26,18 @@ if (isset($_POST['reset_password'])) {
                 // Update the warden's password in the database
                 $update_sql = "UPDATE warden SET kata = '$hashed_password' WHERE idwarden = '$idwarden'";
                 if ($conn->query($update_sql)) {
-                    echo "Password updated successfully!";
+                    echo "Kata Laluan berjaya dikemaskini";
                 } else {
-                    echo "Error updating password: " . $conn->error;
+                    echo "<div class='error-message'>Kata Laluan Tidak Berjaya dikemaskini: </div>" . $conn->error;
                 }
             } else {
-                echo "Current password is incorrect.";
+                echo "<div class='error-message'>Kata laluan semasa adalah tidak betul.</div>";
             }
         } else {
-            echo "Error fetching current password: " . $conn->error;
+            echo "<div class='error-message'>Ralat semasa mengambil kata laluan semasa: </div>" . $conn->error;
         }
     } else {
-        echo "New password and confirm password do not match.";
+        echo "<div class='error-message'>Kata laluan baharu dan sahkan kata laluan tidak sepadan.</div>";
     }
 }
 // Check if the edit form has been submitted
@@ -51,7 +51,7 @@ if (isset($_POST['update_profile'])) {
     if ($conn->query($update_sql)) {
         echo "Profile updated successfully!";
     } else {
-        echo "Error updating profile: " . $conn->error;
+        echo "<div class='error-message'>Error updating profile: </div>" . $conn->error;
     }
 }
 
@@ -68,7 +68,7 @@ if (!$result) {
 $row = $result->fetch_object();
 
 if (!$row) {
-    echo "No data found for this warden.";
+    echo "<div class='error-message'>No data found for this warden.</div>";
     exit;
 }
 

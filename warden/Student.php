@@ -8,12 +8,12 @@
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === 'warden') {
-        $error_message ="<div class='error-message'>The provided NRIC belongs to a warden.</div>";
+        $error_message ="<div class='error-message'>NRIC yang disediakan adalah milik Warden.</div>";
     }
     if ($error === 'exists') {
-        $error_message = "<div class='error-message'>The Student's Identification Number already exists in the database.</div>";
+        $error_message = "<div class='error-message'>Nombor Kad Pengenalan Pelajar telah pun wujud dalam pangkalan data.</div>";
     } elseif ($error === 'invalid') {
-        $error_message = "<div class='error-message'>Invalid input. Please fill in all fields correctly.</div>";
+        $error_message = "<div class='error-message'>Input tidak sah. Sila isi semua medan dengan betul.</div>";
     }
 
 }

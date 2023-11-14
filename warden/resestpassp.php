@@ -11,8 +11,8 @@ $hashed_password = password_hash($nokppelajar, PASSWORD_DEFAULT);
 // Update the user's password in the database
 $sql = "UPDATE pelajar SET kata = '$hashed_password' WHERE idpelajar = '$idpelajar'";
 if ($conn->query($sql)) {
-    echo "Password updated successfully!";
+    echo "Kata Laluan Berjaya Dikemaskini!";
 } else {
-    echo "Error updating password: " . $conn->error;
+    echo "<div class='error-message'>Ralat Kata Laluan: </div>" . $conn->error;
 }
 header('location: index.php?menu=Student');

@@ -10,7 +10,7 @@ $katas = $_POST['nokppelajar'];
 
 // Check if input is valid
 if (empty($namapelajar) || empty($katas) || empty($nokppelajar) || strlen($nokppelajar) !== 12) {
-    echo "Invalid input. Please fill in all fields correctly.";
+    echo "<div class='error-message'>Invalid input. Please fill in all fields correctly.</div>";
     exit;
 }
 
@@ -20,7 +20,7 @@ $check_result = $conn->query($check_sql);
 
 if (!$check_result) {
     // Handle the query error
-    echo "Error: " . $conn->error;
+    echo "<div class='error-message'>Error: </div>" . $conn->error;
     $conn->close();
     exit;
 }
@@ -64,5 +64,5 @@ if ($conn->query($sql) === TRUE) {
     exit;
 }
 
-echo "Error: " . $conn->error;
+echo "<div class='error-message'>Error: </div>" . $conn->error;
 $conn->close();
