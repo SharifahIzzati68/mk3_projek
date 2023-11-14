@@ -85,10 +85,10 @@ $kata = $row->kata;
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../include/spel.css">
-    <title>Profile</title>
+    <title>Profil</title>
 </head>
 <body>
-<h1>Profile</h1>
+<h1>Profil</h1>
 <table class="table3">
     <tr class="tr3">
         <th class="tableprofile">Nama warden</th>
@@ -104,12 +104,12 @@ $kata = $row->kata;
     <input type="hidden" name="update_profile" value="1">
     <fieldset>
         <legend>
-            <h2>Edit Profile</h2>
+            <h2>Kemaskini Profil</h2>
         </legend>
         <table>
             <tr>
                 <th class="th">
-                    <label for="new_namawarden">New Name:</label>
+                    <label for="new_namawarden">Nama Baru:</label>
                 </th>
                 <td>
                     <label>
@@ -119,7 +119,7 @@ $kata = $row->kata;
             </tr>
             <tr>
                 <th>
-                    <label for="new_nokpwarden">New IC Number:</label>
+                    <label for="new_nokpwarden">No Ic Baru:</label>
                 </th>
                 <td><label>
                         <input type="text" name="new_nokpwarden" value="<?php echo $nokpwarden; ?>" required minlength="12" maxlength="12">
@@ -127,7 +127,7 @@ $kata = $row->kata;
             </tr>
             <tr>
                 <td class="but2"  colspan="2">
-                    <button type="submit">Update Profile</button>
+                    <button type="submit">Kemaskini Profil</button>
                 </td>
             </tr>
         </table>
@@ -139,12 +139,12 @@ $kata = $row->kata;
     <input type="hidden" name="reset_password" value="1">
     <fieldset>
         <legend>
-            <h2>Change Password</h2>
+            <h2>Tukar Kata Laluan</h2>
         </legend>
         <table>
             <tr>
                 <th>
-                    <label for="current_password">Current Password:</label>
+                    <label for="current_password">Kata Laluan Semasa:</label>
                 </th>
                 <td>
                     <label>
@@ -154,7 +154,7 @@ $kata = $row->kata;
             </tr>
             <tr>
                 <th class="th">
-                    <label for="new_password">New Password:</label>
+                    <label for="new_password">Kata Laluan Baru:</label>
                 </th>
                 <td>
                     <label>
@@ -164,7 +164,7 @@ $kata = $row->kata;
             </tr>
             <tr>
                 <th>
-                    <label for="confirm_password">Confirm Password:</label>
+                    <label for="confirm_password">Sahkan Kata Laluan:</label>
                 </th>
                 <td>
                     <label>
@@ -174,7 +174,7 @@ $kata = $row->kata;
             </tr>
             <tr>
                 <td class="but3" colspan="2">
-                    <button type="submit">Change Password</button>
+                    <button type="submit">Tukar Kata Laluan</button>
                 </td>
             </tr>
         </table>

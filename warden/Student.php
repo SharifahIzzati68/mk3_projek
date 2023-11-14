@@ -8,13 +8,14 @@
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === 'warden') {
-        $error_message =  "The provided NRIC belongs to a warden.";
+        $error_message ="<div class='error-message'>The provided NRIC belongs to a warden.</div>";
     }
     if ($error === 'exists') {
-        $error_message =  "The Student's Identification Number already exists in the database.";
+        $error_message = "<div class='error-message'>The Student's Identification Number already exists in the database.</div>";
     } elseif ($error === 'invalid') {
-        $error_message = "Invalid input. Please fill in all fields correctly.";
+        $error_message = "<div class='error-message'>Invalid input. Please fill in all fields correctly.</div>";
     }
+
 }
 
 $sql = "SELECT namawarden FROM warden WHERE idwarden = $idwarden";
@@ -108,13 +109,13 @@ if (!isset($_GET['edit'])) {
     <?php
 }
 ?>
-<h2>Student List</h2>
+<h2>Senarai Pelajar</h2>
 <table class="table3">
     <tr class="tr3">
         <th class="tr4">Bil</th>
-        <th class="tr4">Student Name</th>
+        <th class="tr4">Nama Pelajar</th>
         <th class="tr4">NRIC</th>
-        <th class="tr4">Action</th>
+        <th class="tr4">Tindakan</th>
 
     </tr>
     <?php
@@ -131,10 +132,10 @@ if (!isset($_GET['edit'])) {
                 <a href="resestpassp.php?nokppelajar=<?php echo $row->nokppelajar; ?>&idpelajar=<?php echo $row->idpelajar; ?>">Reset
                     Kata Laluan</a>
                 |
-                <a href="index.php?edit=<?php echo $row->idpelajar; ?>& menu=Student">Edit</a>
+                <a href="index.php?edit=<?php echo $row->idpelajar; ?>& menu=Student">Kemaskini</a>
                 |
                 <a href="padam.php?idpelajar=<?php echo $row->idpelajar; ?>"
-                   onclick="return sahkan()">Delete</a>
+                   onclick="return sahkan()">Padam</a>
             </td>
         </tr>
         <?php
