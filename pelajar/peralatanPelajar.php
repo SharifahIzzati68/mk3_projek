@@ -4,7 +4,7 @@
  *  @var string $idpelajar
  */
 
-// Check for error messages from simpan.php
+// Check for error messages from simpanPeralatan.php
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === 'exists') {
@@ -37,7 +37,7 @@ if (isset($error_message)) {
 }
 if (!isset($_GET['edit'])) {
     ?>
-    <form action="simpan.php" method="post">
+    <form action="simpanPeralatan.php" method="post">
         <fieldset>
             <legend><h1>Peralatan</h1></legend>
             <table>
@@ -80,7 +80,7 @@ if (!isset($_GET['edit'])) {
     $sql = "SELECT * FROM peralatan WHERE idperalatan = $idperalatan AND pelajar = $idpelajar ORDER BY pelajar";
     $row = $conn->query($sql)->fetch_object();
     ?>
-    <form action="kemaskini.php?" method="post">
+    <form action="kemaskiniPeralatan.php?" method="post">
         <input type="hidden" name="idperalatan" value="<?php echo $row->idperalatan; ?>">
         <fieldset>
             <legend><h1>Kemaskini Peralatan</h1></legend>

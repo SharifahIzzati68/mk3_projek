@@ -4,7 +4,7 @@
  * @var string $idwarden
  */
 
-// Check for error messages from simpan.php
+// Check for error messages from simpanPeralatan.php
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === 'warden') {
