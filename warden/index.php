@@ -24,15 +24,15 @@ $namawarden = $row->namawarden;
 <p></p>
 <table>
     <tr>
-        <th>System Warden</th>
+        <th>Sistem Warden</th>
         <td>
-            <a href="index.php?menu=Student">Student List</a>
+            <a href="index.php?menu=Student">Senarai Pelajar</a>
             ::
-            <a href="index.php?menu=peralatanP">Equipment List</a>
+            <a href="index.php?menu=peralatanP">Senarai Peralatan</a>
             ::
-            <a href="index.php?menu=profile">Profile</a>
+            <a href="index.php?menu=profile">Profil</a>
             ::
-            <a href="../logout.php">Logout</a>
+            <a href="../logout.php">Log Keluar</a>
         </td>
     </tr>
 </table>
