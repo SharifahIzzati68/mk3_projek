@@ -22,7 +22,7 @@ if ($row['count'] > 0) {
 // Check if input is valid
 if (empty($jenisperalatan) || empty($nosiri) || empty($jenama))
 {
-    echo "Invalid input. Please fill in all fields correctly.";
+    echo "Input tidak dapat disahkan.Mohon isi semua ruang yang disediakan dengan betul.";
     exit;
 }
 

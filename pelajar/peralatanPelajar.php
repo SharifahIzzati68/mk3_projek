@@ -4,13 +4,13 @@
  *  @var string $idpelajar
  */
 
-// Check for error messages from simpan.php
+// Check for error messages from simpanPeralatan.php
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === 'exists') {
-        $error_message = "Equipment with this serial number already exists for you.";
+        $error_message = "No siri peralatan ini telahpun wujud.";
     } elseif ($error === 'invalid') {
-        $error_message = "Invalid input. Please fill in all fields correctly.";
+        $error_message = "Input tidak dapat disahkan.Mohon isi semua ruang yang disediakan dengan betul.";
     }
 }
 
@@ -37,7 +37,7 @@ if (isset($error_message)) {
 }
 if (!isset($_GET['edit'])) {
     ?>
-    <form action="simpan.php" method="post">
+    <form action="simpanPeralatan.php" method="post">
         <fieldset>
             <legend><h1>Peralatan</h1></legend>
             <table>
@@ -80,7 +80,7 @@ if (!isset($_GET['edit'])) {
     $sql = "SELECT * FROM peralatan WHERE idperalatan = $idperalatan AND pelajar = $idpelajar ORDER BY pelajar";
     $row = $conn->query($sql)->fetch_object();
     ?>
-    <form action="kemaskini.php?" method="post">
+    <form action="kemaskiniPeralatan.php?" method="post">
         <input type="hidden" name="idperalatan" value="<?php echo $row->idperalatan; ?>">
         <fieldset>
             <legend><h1>Kemaskini Peralatan</h1></legend>
@@ -145,7 +145,7 @@ if (!isset($_GET['edit'])) {
             <td class="tableprofile">
                 <a href="index.php?edit=<?php echo $row->idperalatan; ?>&menu=peralatanPelajar">Edit</a>
                 |
-                <a href="padamPelajar.php?idperalatan=<?php echo $row->idperalatan; ?>"
+                <a href="padamPeralatan.php?idperalatan=<?php echo $row->idperalatan; ?>"
                    onclick="return sahkan()">Padam</a>
             </td>
         </tr>

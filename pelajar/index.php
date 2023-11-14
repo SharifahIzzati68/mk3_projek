@@ -26,11 +26,11 @@ $nokppelajar = $row->nokppelajar;
     <tr>
         <th>Sistem Pelajar</th>
         <td>
-            <a href="index.php?menu=home">Home</a>
+            <a href="index.php?menu=home">Laman Utama</a>
             ::
             <a href="index.php?menu=peralatanPelajar">Senarai Peralatan</a>
             ::
-            <a href="index.php?menu=profilePelajar">Profile</a>
+            <a href="index.php?menu=profilePelajar">Profil</a>
             ::
             <a href="../logout.php">Logout</a>
         </td>
