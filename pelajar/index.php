@@ -30,7 +30,7 @@ $nokppelajar = $row->nokppelajar;
             ::
             <a href="index.php?menu=peralatan">Senarai Peralatan</a>
             ::
-            <a href="index.php?menu=profile">Profile</a>
+            <a href="index.php?menu=profilePelajar">Profile</a>
             ::
             <a href="../logout.php">Logout</a>
         </td>
