@@ -15,7 +15,7 @@ $row = $check_result->fetch_assoc();
 
 if ($row['count'] > 0) {
     // Redirect back to the nosiri registration page with an error message
-    header('location: index.php?menu=peralatan&error=exists');
+    header('location: index.php?menu=peralatanPelajar&error=exists');
     exit;
 }
 

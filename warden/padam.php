@@ -11,8 +11,11 @@ $sql_check = "SELECT * FROM peralatan WHERE pelajar = $idpelajar";
 $result = $conn->query($sql_check);
 
 if ($result->num_rows > 0) {
+    echo "<script>
     // If there are associated equipment records, prevent deletion
-    echo "Cannot delete student. Equipment records exist.";
+            alert('Harap maaf,data pelajar ini tidak boleh dipadamkan kerana rekod peralatan pelajar ini telahpun direkodkan!');
+            window.location.href = 'index.php?menu=Student';
+          </script>";
 } else {
     // No associated equipment, proceed with deletion
     $sql_delete = "DELETE FROM pelajar WHERE idpelajar = $idpelajar";
