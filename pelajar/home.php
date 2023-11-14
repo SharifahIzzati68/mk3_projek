@@ -9,5 +9,6 @@
 </head>
 <body>
 <h1>HOME: Laman Utama</h1>
+<p>Selamat datang kepada pelajar baru.Sistem ini adalah untuk mendaftar peralatan</p>
 </body>
 </html>
