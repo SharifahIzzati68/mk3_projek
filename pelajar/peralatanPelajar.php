@@ -145,7 +145,7 @@ if (!isset($_GET['edit'])) {
             <td class="tableprofile">
                 <a href="index.php?edit=<?php echo $row->idperalatan; ?>&menu=peralatanPelajar">Edit</a>
                 |
-                <a href="padamPelajar.php?idperalatan=<?php echo $row->idperalatan; ?>"
+                <a href="padamPeralatan.php?idperalatan=<?php echo $row->idperalatan; ?>"
                    onclick="return sahkan()">Padam</a>
             </td>
         </tr>
