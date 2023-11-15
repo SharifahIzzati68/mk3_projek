@@ -22,7 +22,7 @@ if ($row['count'] > 0) {
 // Check if input is valid
 if (empty($jenisperalatan) || empty($nosiri) || empty($jenama))
 {
-    echo '<p class="error">Input tidak dapat disahkan.Mohon isi semua ruang yang disediakan dengan betul.</p>';
+    echo '<p class="error-message">Input tidak dapat disahkan.Mohon isi semua ruang yang disediakan dengan betul.</p>';
     exit;
 }
 
