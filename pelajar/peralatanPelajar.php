@@ -33,7 +33,7 @@ $namapelajar = $row->namapelajar;
 <?php
 
 if (isset($error_message)) {
-    echo '<p class="error">' . $error_message . '</p>';
+    echo '<p class="error-message">' . $error_message . '</p>';
 }
 if (!isset($_GET['edit'])) {
     ?>
