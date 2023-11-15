@@ -43,18 +43,18 @@ if (isset($_POST['reset_password'])) {
                 // Update the user's password in the database
                 $update_sql = "UPDATE pelajar SET kata = '$hashed_password' WHERE idpelajar = '$idpelajar'";
                 if ($conn->query($update_sql)) {
-                    echo "Katalaluan berjaya dikemaskinikan!";
+                    echo '<p class="error">Katalaluan berjaya dikemaskinikan!</p>';
                 } else {
-                    echo "Error updating password: " . $conn->error;
+                    echo '<p class="error">Error updating password:</p>'. $conn->error;
                 }
             } else {
-                echo "Katalaluan baru dan katalaluan tetap tidak sepadan.";
+                echo '<p class="error">Katalaluan baru dan katalaluan tetap tidak sepadan.</p>';
             }
         } else {
-            echo "Katalaluan tetap tidak sama.";
+            echo '<p class="error">Katalaluan tetap tidak sama.</p>';
         }
     } else {
-        echo "Error fetching current password: " . $conn->error;
+        echo '<p class="error">Error fetching current password: </p>'. $conn->error;
     }
 }
 
@@ -67,9 +67,9 @@ if (isset($_POST['update_profile'])) {
     // Update the user's profile information in the database
     $update_sql = "UPDATE pelajar SET namapelajar = '$new_namapelajar', nokppelajar = '$new_nokppelajar' WHERE idpelajar = '$idpelajar'";
     if ($conn->query($update_sql)) {
-        echo "Profil berjaya dikemaskinikan!";
+        echo '<p class="error">Profil berjaya dikemaskinikan!</p>';
     } else {
-        echo "Error updating profile: " . $conn->error;
+        echo '<p class="error">Error updating profile: </p> '. $conn->error;
     }
 }
 ?>
