@@ -100,7 +100,7 @@ $kata = $row->kata;
     </tr>
 </table>
 
-<form action="index.php?menu=profile" method="post">
+<form action="index.php?menu=profileWarden" method="post">
     <input type="hidden" name="update_profile" value="1">
     <fieldset>
         <legend>
@@ -135,7 +135,7 @@ $kata = $row->kata;
     </fieldset>
 </form>
 
-<form action="index.php?menu=profile" method="post">
+<form action="index.php?menu=profileWarden" method="post">
     <input type="hidden" name="reset_password" value="1">
     <fieldset>
         <legend>

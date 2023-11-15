@@ -39,7 +39,7 @@ if (isset($error_message)) {
 }
 if (!isset($_GET['edit'])) {
     ?>
-    <form action="simpan.php" method="post">
+    <form action="simpanWarden.php" method="post">
         <fieldset>
             <legend><h2>Daftar Pelajar</h2></legend>
             <table>
@@ -76,7 +76,7 @@ if (!isset($_GET['edit'])) {
     $sql = "SELECT * FROM pelajar WHERE idpelajar = $idpelajar";
     $row = $conn->query($sql)->fetch_object();
     ?>
-    <form action="kemaskini.php?menu=Student" method="post">
+    <form action="kemaskiniWarden.php?menu=Student" method="post">
         <input type="hidden" name="idpelajar" value="<?php echo $row->idpelajar; ?>">
         <fieldset>
             <legend><h2>Kemaskini Data Pelajar</h2></legend>
@@ -129,12 +129,12 @@ if (!isset($_GET['edit'])) {
             <td class="tr3"><?php echo $row->namapelajar; ?></td>
             <td class="tr3"><?php echo $row->nokppelajar; ?></td>
             <td class="tr3">
-                <a href="resestpassp.php?nokppelajar=<?php echo $row->nokppelajar; ?>&idpelajar=<?php echo $row->idpelajar; ?>">Reset
+                <a href="resestpasspWarden.php?nokppelajar=<?php echo $row->nokppelajar; ?>&idpelajar=<?php echo $row->idpelajar; ?>">Reset
                     Kata Laluan</a>
                 |
                 <a href="index.php?edit=<?php echo $row->idpelajar; ?>& menu=Student">Kemaskini</a>
                 |
-                <a href="padam.php?idpelajar=<?php echo $row->idpelajar; ?>"
+                <a href="padamWarden.php?idpelajar=<?php echo $row->idpelajar; ?>"
                    onclick="return sahkan()">Padam</a>
             </td>
         </tr>

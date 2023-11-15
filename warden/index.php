@@ -28,9 +28,9 @@ $namawarden = $row->namawarden;
         <td>
             <a href="index.php?menu=Student">Senarai Pelajar</a>
             ::
-            <a href="index.php?menu=peralatanP">Senarai Peralatan</a>
+            <a href="index.php?menu=peralatanPWarden">Senarai Peralatan</a>
             ::
-            <a href="index.php?menu=profile">Profil</a>
+            <a href="index.php?menu=profileWarden">Profil</a>
             ::
             <a href="../logout.php">Log Keluar</a>
         </td>
